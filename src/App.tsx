@@ -30,21 +30,23 @@ function App() {
         </a>
       </div>
 
-      <div className="mt-6 md:mt-8 text-3xl">
+      <div className="mt-6 text-3xl md:mt-8">
         Unlock Your PTE Potential: Analyze, Improve, Succeed!
       </div>
       <div className="mt-3 text-xl">
         Take control of your PTE journey today!
       </div>
 
-      <div className="mt-8 md:flex md:flex-row-reverse md:justify-between">
-        <img
-          className="w-full rounded-xl shadow-2xl shadow-sky-950/85 md:ml-6 md:w-3/5"
-          src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/2.png"
-          alt=""
-        />
-        <div className="mt-8 md:mt-0 flex flex-col justify-center text-lg">
-          <p className='mb-6 md:mb-10'>
+      <div className="mt-8 md:flex md:flex-row-reverse md:justify-between gap-6">
+        <div className="h-max w-full md:w-3/5">
+          <img
+            className="w-full rounded-xl shadow-2xl shadow-sky-950/85"
+            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/2.png"
+            alt=""
+          />
+        </div>
+        <div className="mt-8 flex flex-col justify-center text-lg md:mt-0 md:w-2/5">
+          <p className="mb-6 md:mb-10">
             Simply visit your PTE score page after installation, where you’ll
             find a detailed breakdown of your performance, including your
             sub-scores, CLB levels, and more.
