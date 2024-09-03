@@ -5,3 +5,14 @@
 body {
   @apply container mx-auto min-h-screen bg-gradient-to-b from-sky-100 to-slate-100 bg-no-repeat px-4 py-6 text-slate-800;
 }
+
+.swiper-pagination-bullet-2 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
