@@ -17,7 +17,7 @@ function App() {
         element.scrollIntoView({
           behavior: 'smooth',
         })
-      }, 120)
+      }, 240)
     }
   }, [])
 
