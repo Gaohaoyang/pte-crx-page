@@ -11,11 +11,13 @@ function App() {
     const parsed = queryString.parse(location.search)
     console.log(parsed)
     if (parsed.scrollTo === 'donation') {
-      const element = document.querySelector<HTMLDivElement>('#donation')
-      if (!element) return
-      element.scrollIntoView({
-        behavior: 'smooth',
-      })
+      setTimeout(() => {
+        const element = document.querySelector<HTMLDivElement>('#donation')
+        if (!element) return
+        element.scrollIntoView({
+          behavior: 'smooth',
+        })
+      }, 120)
     }
   }, [])
 
