@@ -80,11 +80,6 @@ function App() {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <img
-            className="w-full rounded-xl shadow-2xl shadow-sky-950/85"
-            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/2.png"
-            alt=""
-          /> */}
         </div>
         <div className="mt-2 flex flex-col justify-center text-lg md:mt-0 md:w-2/5">
           <p className="mb-6 md:mb-10">
@@ -97,6 +92,147 @@ function App() {
             and areas for improvement.
           </p>
         </div>
+      </div>
+
+      <h2 className="mt-8 text-3xl">Donation</h2>
+      <p className="mt-3">
+        If you found this helpful, feel free to sponsor me for a cup of coffee!
+        ☕ :) I really appreciate it. Have a great day!
+      </p>
+      <p className="mt-1">Your name will appear on the donation list. ❤️</p>
+
+      <div className="mt-3 flex flex-col items-center">
+        <div className="w-full text-right md:w-9/12">
+          Last updated: 2024-09-02
+        </div>
+        <table className="w-full border-collapse border-b-2 border-t-2 border-slate-400 text-center text-sm md:w-9/12 md:text-base">
+          <thead>
+            <tr className="border-b border-slate-400">
+              <th>Name</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Method</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              {
+                name: 'O*y',
+                date: '2024-09-02',
+                amount: '￥5.00',
+                method: 'Wechat Pay',
+                message: 'Nan zhou',
+              },
+              {
+                name: 'T*m L*',
+                date: '2024-08-20',
+                amount: 'CA$5.00',
+                method: '<i>Interac</i> e-Transfer',
+                message: '-',
+              },
+            ].map((item) => (
+              <tr className="transition-colors odd:bg-blue-50 even:bg-blue-50 hover:bg-slate-200">
+                <td>{item.name}</td>
+                <td>{item.date}</td>
+                <td>{item.amount}</td>
+                <td dangerouslySetInnerHTML={{ __html: item.method }}></td>
+                <td>{item.message}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="mt-8 text-xl">
+        You can support me through the following methods.
+      </h2>
+      <div className="mt-3 flex flex-col items-center md:flex-row md:justify-between">
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+          <div className="font-bold">
+            <i>Interac</i> e-Transfer
+          </div>
+          <div className="mt-5">gaohaoyang126@outlook.com</div>
+        </div>
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+          <a
+            href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
+            target="_blank"
+            className="font-bold text-blue-900"
+          >
+            PayPal
+          </a>
+          <img
+            className="my-1 h-40"
+            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/QR%20Code.png"
+            alt=""
+          />
+          <a
+            className="text-blue-700"
+            href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
+            target="_blank"
+          >
+            PayPal Donation Link
+          </a>
+        </div>
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+          <div className="font-bold">Wechat Pay</div>
+          <img
+            className="my-1 h-40"
+            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/wechatPay.png"
+            alt=""
+          />
+        </div>
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+          <div className="font-bold">AliPay</div>
+          <img
+            className="my-1 h-40"
+            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/Alipay.png"
+            alt=""
+          />
+        </div>
+        {/* <div style="display: flex; flex-direction: column; align-items: center">
+          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">
+            <a
+              href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
+              target="_blank"
+              >PayPal</a
+            >
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <img
+              style="height: 110px; margin-bottom: 12px"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/QR%20Code.png"
+              alt=""
+            />
+            <a
+              href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
+              target="_blank"
+            >
+              PayPal Donation Link
+            </a>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">Wechat Pay</div>
+          <div>
+            <img
+              style="height: 120px"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/wechatPay.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">AliPay</div>
+          <div>
+            <img
+              style="height: 120px"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/Alipay.png"
+              alt=""
+            />
+          </div>
+        </div> */}
       </div>
     </>
   )
