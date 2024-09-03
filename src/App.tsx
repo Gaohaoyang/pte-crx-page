@@ -3,8 +3,22 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Autoplay, Pagination } from 'swiper/modules'
+import { useEffect } from 'react'
+import queryString from 'query-string'
 
 function App() {
+  useEffect(() => {
+    const parsed = queryString.parse(location.search)
+    console.log(parsed)
+    if (parsed.scrollTo === 'donation') {
+      const element = document.querySelector<HTMLDivElement>('#donation')
+      if (!element) return
+      element.scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
+  }, [])
+
   return (
     <>
       <div className="flex flex-col items-center md:flex-row md:justify-between">
@@ -94,7 +108,9 @@ function App() {
         </div>
       </div>
 
-      <h2 className="mt-8 text-3xl">Donation</h2>
+      <h2 className="mt-8 text-3xl" id="donation">
+        Donation
+      </h2>
       <p className="mt-3">
         If you found this helpful, feel free to sponsor me for a cup of coffee!
         ☕ :) I really appreciate it. Have a great day!
@@ -217,7 +233,7 @@ function App() {
           />
         </div>
       </div>
-      <div className='h-20'></div>
+      <div className="h-20"></div>
     </>
   )
 }
