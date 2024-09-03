@@ -86,11 +86,13 @@ function App() {
                     backgroundImage: `url(${item})`,
                   }}
                 /> */}
+                {/* <div className="flex w-full items-center justify-center"> */}
                 <img
-                  className="w-full rounded-lg shadow-lg shadow-sky-950/55"
+                  className="h-full w-full rounded-lg object-contain shadow-lg shadow-sky-950/55"
                   src={item}
                   alt=""
                 />
+                {/* </div> */}
               </SwiperSlide>
             ))}
           </Swiper>
