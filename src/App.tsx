@@ -102,17 +102,18 @@ function App() {
       <p className="mt-1">Your name will appear on the donation list. ❤️</p>
 
       <div className="mt-3 flex flex-col items-center">
-        <div className="w-full text-right md:w-9/12">
-          Last updated: 2024-09-02
+        <div className="flex w-full justify-between md:w-9/12">
+          <div className="text-xl font-semibold">Donation list</div>
+          <div>Last updated: 2024-09-02</div>
         </div>
         <table className="w-full border-collapse border-b-2 border-t-2 border-slate-400 text-center text-sm md:w-9/12 md:text-base">
           <thead>
             <tr className="border-b border-slate-400">
-              <th>Name</th>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Method</th>
-              <th>Message</th>
+              <th className="font-semibold">Name</th>
+              <th className="font-semibold">Date</th>
+              <th className="font-semibold">Amount</th>
+              <th className="font-semibold">Method</th>
+              <th className="font-semibold">Message</th>
             </tr>
           </thead>
           <tbody>
@@ -132,7 +133,7 @@ function App() {
                 message: '-',
               },
             ].map((item) => (
-              <tr className="transition-colors odd:bg-blue-50 even:bg-blue-50 hover:bg-slate-200">
+              <tr className="transition-colors odd:bg-blue-100 even:bg-blue-50 hover:bg-slate-200">
                 <td>{item.name}</td>
                 <td>{item.date}</td>
                 <td>{item.amount}</td>
@@ -152,14 +153,24 @@ function App() {
           <div className="font-bold">
             <i>Interac</i> e-Transfer
           </div>
-          <div className="mt-5">gaohaoyang126@outlook.com</div>
+          <img
+            className="my-1 w-36"
+            src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/Interac_e-Transfer_logo.png"
+            alt="Interac e-Transfer"
+          />
+          <div className="mt-2">gaohaoyang126@outlook.com</div>
         </div>
         <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
           <a
             href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
             target="_blank"
-            className="font-bold text-blue-900"
+            className="flex items-center font-bold text-blue-900"
           >
+            <img
+              className="mr-1 h-8"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/paypal.png"
+              alt="paypal"
+            />
             PayPal
           </a>
           <img
@@ -176,7 +187,14 @@ function App() {
           </a>
         </div>
         <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
-          <div className="font-bold">Wechat Pay</div>
+          <div className="flex items-center font-bold">
+            <img
+              className="mr-1 h-8"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/wechatpayLogo.png"
+              alt="wechatpayLogo"
+            />
+            Wechat Pay
+          </div>
           <img
             className="my-1 h-40"
             src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/wechatPay.png"
@@ -184,56 +202,22 @@ function App() {
           />
         </div>
         <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
-          <div className="font-bold">AliPay</div>
+          <div className="flex items-center font-bold">
+            <img
+              className="mr-1 h-7"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/alipayLogo.png"
+              alt="alipayLogo"
+            />
+            AliPay
+          </div>
           <img
             className="my-1 h-40"
             src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/Alipay.png"
             alt=""
           />
         </div>
-        {/* <div style="display: flex; flex-direction: column; align-items: center">
-          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">
-            <a
-              href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
-              target="_blank"
-              >PayPal</a
-            >
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img
-              style="height: 110px; margin-bottom: 12px"
-              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/QR%20Code.png"
-              alt=""
-            />
-            <a
-              href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
-              target="_blank"
-            >
-              PayPal Donation Link
-            </a>
-          </div>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center">
-          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">Wechat Pay</div>
-          <div>
-            <img
-              style="height: 120px"
-              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/wechatPay.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center">
-          <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px">AliPay</div>
-          <div>
-            <img
-              style="height: 120px"
-              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/Alipay.png"
-              alt=""
-            />
-          </div>
-        </div> */}
       </div>
+      <div className='h-20'></div>
     </>
   )
 }
