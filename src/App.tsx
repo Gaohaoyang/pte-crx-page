@@ -170,8 +170,8 @@ function App() {
       <h2 className="mt-8 text-xl">
         You can support me through the following methods.
       </h2>
-      <div className="mt-3 flex flex-col items-center md:flex-row md:justify-between">
-        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+      <div className="mt-3 flex flex-col flex-wrap items-center md:flex-row">
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-60 md:shadow-md">
           <div className="font-bold">
             <i>Interac</i> e-Transfer
           </div>
@@ -182,7 +182,7 @@ function App() {
           />
           <div className="mt-2">gaohaoyang126@outlook.com</div>
         </div>
-        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-52 md:shadow-md">
           <a
             href="https://www.paypal.com/donate/?business=NB2D3UXSQKDKU&no_recurring=0&item_name=Thanks+for+your+support%21+I+really+appreciate+it.+Have+a+great+day%21&currency_code=CAD"
             target="_blank"
@@ -208,7 +208,7 @@ function App() {
             PayPal Donation Link
           </a>
         </div>
-        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-52 md:shadow-md">
           <div className="flex items-center font-bold">
             <img
               className="mr-1 h-8"
@@ -223,7 +223,7 @@ function App() {
             alt=""
           />
         </div>
-        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mb-0 md:h-64 md:w-64 md:shadow-md">
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-52 md:shadow-md">
           <div className="flex items-center font-bold">
             <img
               className="mr-1 h-7"
@@ -238,8 +238,24 @@ function App() {
             alt=""
           />
         </div>
+        <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-52 md:shadow-md">
+          <a
+            href="https://buymeacoffee.com/gaohaoyangh"
+            target="_blank"
+            className="flex flex-col items-center"
+          >
+            <div className="font-bold mb-2">Buy Me a Coffee</div>
+            <img
+              className="my-1 w-40"
+              src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/buymeacoffee.png"
+              alt="Interac e-Transfer"
+            />
+            <div className="text-blue-700 mt-2">Buy Me a Coffee Link</div>
+            {/* <div className="mt-2">gaohaoyang126@outlook.com</div> */}
+          </a>
+        </div>
       </div>
-      <div className="h-20"></div>
+      <div className="h-8"></div>
       <DiscussionEmbed
         shortname="gaohaoyang-github-io-pte-crx-page"
         config={{
