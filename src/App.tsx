@@ -10,7 +10,7 @@ import { DiscussionEmbed } from 'disqus-react'
 function App() {
   useEffect(() => {
     const parsed = queryString.parse(location.search)
-    console.log(parsed)
+    // console.log(parsed)
     if (parsed.scrollTo === 'donation') {
       setTimeout(() => {
         const element = document.querySelector<HTMLDivElement>('#donation')
@@ -37,8 +37,8 @@ function App() {
             </h1>
             <h2>Chrome Extension</h2>
             <div className="mt-1 flex items-center text-gray-600">
-              {[1, 2, 3, 4, 5].map(() => (
-                <MdStar className="text-xl" />
+              {[1, 2, 3, 4, 5].map((item) => (
+                <MdStar key={item} className="text-xl" />
               ))}
             </div>
           </div>
@@ -70,8 +70,8 @@ function App() {
             style={{}}
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
             loop
           >
             {[
@@ -79,8 +79,11 @@ function App() {
               'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/0.png',
               'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/1.png',
               // 'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/ptePanel.jpg',
-            ].map((item) => (
-              <SwiperSlide className="px-2 pb-8 md:px-5 md:py-8">
+            ].map((item, index) => (
+              <SwiperSlide
+                key={`${item}_${index}`}
+                className="px-2 pb-8 md:px-5 md:py-8"
+              >
                 {/* <div
                   className="h-96 w-full rounded-lg bg-contain bg-center bg-no-repeat shadow-lg shadow-sky-950/55"
                   style={{
@@ -149,8 +152,11 @@ function App() {
                 method: '<i>Interac</i> e-Transfer',
                 message: '-',
               },
-            ].map((item) => (
-              <tr className="transition-colors odd:bg-blue-100 even:bg-blue-50 hover:bg-slate-200">
+            ].map((item, index) => (
+              <tr
+                key={`${item.name}_${index}`}
+                className="transition-colors odd:bg-blue-100 even:bg-blue-50 hover:bg-slate-200"
+              >
                 <td>{item.name}</td>
                 <td>{item.date}</td>
                 <td>{item.amount}</td>
