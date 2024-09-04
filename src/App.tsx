@@ -5,6 +5,7 @@ import 'swiper/css/pagination'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { useEffect } from 'react'
 import queryString from 'query-string'
+import { DiscussionEmbed } from 'disqus-react'
 
 function App() {
   useEffect(() => {
@@ -50,14 +51,12 @@ function App() {
           Download from Chrome Web Store
         </a>
       </div>
-
       <div className="mt-6 text-3xl md:mt-8">
         Unlock Your PTE Potential: Analyze, Improve, Succeed!
       </div>
       <div className="mt-3 text-xl">
         Take control of your PTE journey today!
       </div>
-
       <div className="mt-2 gap-0 md:flex md:flex-row-reverse md:justify-between">
         <div className="relative left-[-1rem] h-max w-screen md:left-0 md:w-2/3">
           <Swiper
@@ -111,7 +110,6 @@ function App() {
           </p>
         </div>
       </div>
-
       <h2 className="mt-8 text-3xl" id="donation">
         Donation
       </h2>
@@ -120,7 +118,6 @@ function App() {
         ☕ :) I really appreciate it. Have a great day!
       </p>
       <p className="mt-1">Your name will appear on the donation list. ❤️</p>
-
       <div className="mt-3 flex flex-col items-center">
         <div className="flex w-full justify-between md:w-9/12">
           <div className="text-xl font-semibold">Donation list</div>
@@ -164,7 +161,6 @@ function App() {
           </tbody>
         </table>
       </div>
-
       <h2 className="mt-8 text-xl">
         You can support me through the following methods.
       </h2>
@@ -238,6 +234,16 @@ function App() {
         </div>
       </div>
       <div className="h-20"></div>
+      <DiscussionEmbed
+        shortname="gaohaoyang-github-io-pte-crx-page"
+        config={{
+          url: 'https://gaohaoyang.github.io/pte-crx-page',
+          identifier: 'gaohaoyang.github.io_pte-crx-page',
+          title:
+            'PTE Core Sub-Scores | Analyze Your PTE Sub-Scores Online with PTE Core Sub-Scores Chrome Extension | 分析 PTE Core 小分的 Chrome 插件',
+          language: 'en_US',
+        }}
+      />
     </>
   )
 }
