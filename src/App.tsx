@@ -1,26 +1,26 @@
-import { MdStar } from 'react-icons/md'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import { Autoplay, Pagination } from 'swiper/modules'
-import { useEffect } from 'react'
-import queryString from 'query-string'
-import { DiscussionEmbed } from 'disqus-react'
+import { MdStar } from 'react-icons/md';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { useEffect } from 'react';
+import queryString from 'query-string';
+import { DiscussionEmbed } from 'disqus-react';
 
 function App() {
   useEffect(() => {
-    const parsed = queryString.parse(location.search)
+    const parsed = queryString.parse(location.search);
     // console.log(parsed)
     if (parsed.scrollTo === 'donation') {
       setTimeout(() => {
-        const element = document.querySelector<HTMLDivElement>('#donation')
-        if (!element) return
+        const element = document.querySelector<HTMLDivElement>('#donation');
+        if (!element) return;
         element.scrollIntoView({
           behavior: 'smooth',
-        })
-      }, 240)
+        });
+      }, 240);
     }
-  }, [])
+  }, []);
 
   return (
     <>
@@ -32,9 +32,7 @@ function App() {
             className="size-20 rounded-xl md:size-24"
           />
           <div className="ml-4 flex flex-col items-start">
-            <h1 className="text-2xl font-semibold md:text-3xl">
-              PTE Core Sub-Scores
-            </h1>
+            <h1 className="text-2xl font-semibold md:text-3xl">PTE Core Sub-Scores</h1>
             <h2>Chrome Extension</h2>
             <div className="mt-1 flex items-center text-gray-600">
               {[1, 2, 3, 4, 5].map((item) => (
@@ -54,9 +52,7 @@ function App() {
       <div className="mt-6 text-3xl md:mt-8">
         Unlock Your PTE Potential: Analyze, Improve, Succeed!
       </div>
-      <div className="mt-3 text-xl">
-        Take control of your PTE journey today!
-      </div>
+      <div className="mt-3 text-xl">Take control of your PTE journey today!</div>
       <div className="mt-2 gap-0 md:flex md:flex-row-reverse md:justify-between">
         <div className="relative left-[-1rem] h-max w-screen md:left-0 md:w-2/3">
           <Swiper
@@ -80,10 +76,7 @@ function App() {
               'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/1.png',
               // 'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/ptePanel.jpg',
             ].map((item, index) => (
-              <SwiperSlide
-                key={`${item}_${index}`}
-                className="px-2 pb-8 md:px-5 md:py-8"
-              >
+              <SwiperSlide key={`${item}_${index}`} className="px-2 pb-8 md:px-5 md:py-8">
                 {/* <div
                   className="h-96 w-full rounded-lg bg-contain bg-center bg-no-repeat shadow-lg shadow-sky-950/55"
                   style={{
@@ -103,13 +96,12 @@ function App() {
         </div>
         <div className="mt-2 flex flex-col justify-center text-lg md:mt-0 md:w-2/5">
           <p className="mb-6 md:mb-10">
-            Simply visit your PTE score page after installation, where you’ll
-            find a detailed breakdown of your performance, including your
-            sub-scores, CLB levels, and more.
+            Simply visit your PTE score page after installation, where you’ll find a detailed
+            breakdown of your performance, including your sub-scores, CLB levels, and more.
           </p>
           <p className="md:mb-10">
-            Dive into this insightful panel to better understand your strengths
-            and areas for improvement.
+            Dive into this insightful panel to better understand your strengths and areas for
+            improvement.
           </p>
         </div>
       </div>
@@ -117,8 +109,8 @@ function App() {
         Donation
       </h2>
       <p className="mt-3">
-        If you found this helpful, feel free to sponsor me for a cup of coffee!
-        ☕ :) I really appreciate it. Have a great day!
+        If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really
+        appreciate it. Have a great day!
       </p>
       <p className="mt-1">Your name will appear on the donation list. ❤️</p>
       <div className="mt-3 flex flex-col items-center">
@@ -167,9 +159,7 @@ function App() {
           </tbody>
         </table>
       </div>
-      <h2 className="mt-8 text-xl">
-        You can support me through the following methods.
-      </h2>
+      <h2 className="mt-8 text-xl">You can support me through the following methods.</h2>
       <div className="mt-3 flex flex-col flex-wrap items-center md:flex-row">
         <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-60 md:shadow-md">
           <div className="font-bold">
@@ -255,6 +245,23 @@ function App() {
           </a>
         </div>
       </div>
+
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+        crossOrigin="anonymous"
+      ></script>
+
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9139027259917346"
+        data-ad-slot="8680029933"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
       <div className="h-8"></div>
       <DiscussionEmbed
         shortname="gaohaoyang-github-io-pte-crx-page"
@@ -267,7 +274,7 @@ function App() {
         }}
       />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
