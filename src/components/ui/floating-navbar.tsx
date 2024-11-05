@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   motion,
   AnimatePresence,
@@ -21,15 +21,33 @@ export const FloatingNav = ({
   className?: string
 }) => {
   const { scrollYProgress } = useScroll()
-
   const [visible, setVisible] = useState(true)
+  const [canScroll, setCanScroll] = useState(false)
+
+  // 检查页面是否可以滚动
+  useEffect(() => {
+    const checkScrollable = () => {
+      const isScrollable =
+        document.documentElement.scrollHeight > window.innerHeight
+      setCanScroll(isScrollable)
+    }
+
+    checkScrollable()
+    window.addEventListener('resize', checkScrollable)
+    return () => window.removeEventListener('resize', checkScrollable)
+  }, [])
 
   useMotionValueEvent(scrollYProgress, 'change', (current) => {
+    if (!canScroll) {
+      setVisible(true)
+      return
+    }
+
     if (typeof current === 'number') {
       if (scrollYProgress.get() < 0.05) {
         setVisible(true)
       } else {
-        let direction = current! - scrollYProgress.getPrevious()!
+        const direction = current! - scrollYProgress.getPrevious()!
         if (direction > 0) {
           setVisible(false)
         } else {
@@ -58,18 +76,27 @@ export const FloatingNav = ({
           className,
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              'relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300',
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden text-sm sm:block">{navItem.name}</span>
-          </Link>
-        ))}
+        {navItems.map(
+          (
+            navItem: {
+              name: string
+              link: string
+              icon?: JSX.Element
+            },
+            idx: number,
+          ) => (
+            <Link
+              key={`link=${idx}`}
+              href={navItem.link}
+              className={cn(
+                'relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300',
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden text-sm sm:block">{navItem.name}</span>
+            </Link>
+          ),
+        )}
         <button className="relative rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-black dark:border-white/[0.2] dark:text-white">
           <span>Login</span>
           <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
