@@ -34,7 +34,7 @@ function App() {
           />
           <div className="ml-4 flex flex-col items-start">
             <h1 className="text-2xl font-semibold md:text-3xl">
-              PTE Core Sub-Scores
+              PTE Sub-Scores Breakdown
             </h1>
             <h2>Chrome Extension</h2>
             <div className="mt-1 flex items-center text-gray-600">
@@ -76,9 +76,9 @@ function App() {
             loop
           >
             {[
-              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/2.png',
-              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/0.png',
-              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/1.png',
+              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/screenshot1.png',
+              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/screenshot2.png',
+              'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/screenshot3.png',
               // 'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/ptePanel.jpg',
             ].map((item, index) => (
               <SwiperSlide
@@ -140,6 +140,13 @@ function App() {
           <tbody>
             {[
               {
+                name: '*7',
+                date: '2024-11-17',
+                amount: '￥5.00',
+                method: 'Wechat Pay',
+                // message: 'Nan zhou',
+              },
+              {
                 name: 'O*y',
                 date: '2024-09-02',
                 amount: '￥5.00',
@@ -151,7 +158,7 @@ function App() {
                 date: '2024-08-20',
                 amount: 'CA$5.00',
                 method: '<i>Interac</i> e-Transfer',
-                message: '-',
+                // message: '',
               },
             ].map((item, index) => (
               <tr
@@ -264,7 +271,7 @@ function App() {
           url: 'https://gaohaoyang.github.io/pte-crx-page',
           identifier: 'gaohaoyang.github.io_pte-crx-page',
           title:
-            'PTE Core Sub-Scores | Analyze Your PTE Sub-Scores Online with PTE Core Sub-Scores Chrome Extension | 分析 PTE Core 小分的 Chrome 插件',
+            'PTE Sub-Scores Breakdown | Analyze Your PTE Sub-Scores Online with PTE Sub-Scores Breakdown Chrome Extension | 分析 PTE Core 小分的 Chrome 插件',
           language: 'en_US',
         }}
       />
