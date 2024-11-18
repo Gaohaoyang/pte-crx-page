@@ -125,7 +125,7 @@ function App() {
       <div className="mt-3 flex flex-col items-center">
         <div className="flex w-full justify-between md:w-9/12">
           <div className="text-xl font-semibold">Donation list</div>
-          <div>Last updated: 2024-09-02</div>
+          <div>Last updated: 2024-11-18</div>
         </div>
         <table className="w-full border-collapse border-b-2 border-t-2 border-slate-400 text-center text-sm md:w-9/12 md:text-base">
           <thead>
