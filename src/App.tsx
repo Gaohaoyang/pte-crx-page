@@ -159,6 +159,12 @@ function App() {
                 method: 'Wechat Pay',
               },
               {
+                name: '**灏',
+                date: '2024-10-02',
+                amount: '￥20.00',
+                method: 'AliPay',
+              },
+              {
                 name: 'O*y',
                 date: '2024-09-02',
                 amount: '￥5.00',
