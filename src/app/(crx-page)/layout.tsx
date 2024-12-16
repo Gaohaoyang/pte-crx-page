@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '@/components/navbar'
 import { FloatingNav } from '@/components/ui/floating-navbar'
 
 const CrxLayout = ({ children }: { children: React.ReactNode }) => {
@@ -23,7 +24,8 @@ const CrxLayout = ({ children }: { children: React.ReactNode }) => {
   ]
   return (
     <div>
-      <FloatingNav navItems={navItems} />
+      <Navbar />
+      {/* <FloatingNav navItems={navItems} /> */}
       {children}
     </div>
   )
