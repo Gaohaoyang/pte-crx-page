@@ -14,7 +14,7 @@ const Navbar = () => {
   const router = useRouter()
   return (
     <>
-      <div className="fixed top-0 z-50 flex h-10 w-full items-center justify-center bg-white/60 shadow backdrop-blur-sm dark:bg-slate-700/60 dark:shadow-slate-300/30">
+      <div className="fixed top-0 z-50 flex h-10 w-full items-center justify-center bg-white/80 shadow backdrop-blur-sm dark:bg-slate-700/80 dark:shadow-slate-300/30">
         <div className="container flex h-10 items-center justify-between">
           <div className="">
             <Button

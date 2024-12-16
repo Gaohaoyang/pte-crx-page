@@ -7,8 +7,8 @@ import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
 const InstallCard = () => {
   return (
     <CardContainer containerClassName="flex flex-1" className="inter-var">
-      <CardBody className="group/card relative flex w-full flex-1 flex-col items-center justify-between rounded-xl border border-black/[0.1] p-2 shadow-md transition-shadow duration-300 hover:shadow-2xl dark:border-white/[0.2] dark:bg-slate-800 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
-        <div className="inter-var mt-1 flex items-center justify-center gap-2">
+      <CardBody className="group/card relative flex w-full flex-1 flex-col items-center justify-between rounded-xl border border-black/[0.1] px-2 py-4 shadow-md transition-shadow duration-300 hover:shadow-2xl dark:border-white/[0.2] dark:bg-slate-800 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
+        <div className="inter-var flex items-center justify-center gap-2">
           <CardItem translateZ={90}>
             <Image
               src={Logo}
@@ -18,10 +18,10 @@ const InstallCard = () => {
               className="h-20 w-20 rounded-md shadow-lg"
             />
           </CardItem>
-          <div className="inter-var [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]">
+          <div className="inter-var [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d] flex-1">
             <CardItem
               translateZ={90}
-              className="text-xl font-semibold drop-shadow-lg md:text-xl"
+              className="text-lg font-semibold drop-shadow-lg md:text-xl"
             >
               PTE Sub-Scores Breakdown
             </CardItem>
@@ -45,7 +45,7 @@ const InstallCard = () => {
         <CardItem translateZ={80} className="flex w-full justify-center">
           <Button
             color="primary"
-            className="w-11/12 rounded-full font-semibold shadow-lg"
+            className="mt-4 w-11/12 rounded-full font-semibold shadow-lg"
             onPress={() => {
               window.open(
                 'https://chromewebstore.google.com/detail/pte-sub-scores-breakdown/hibclclepijigjnfdkmkfhjogfhgicda',
