@@ -25,7 +25,6 @@ const CrxLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <Navbar />
-      {/* <FloatingNav navItems={navItems} /> */}
       {children}
     </div>
   )
