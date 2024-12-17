@@ -1,11 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
 import { cn } from '@/lib/utils'
+import { ReactNode } from 'react'
 
 interface BlurInProps {
-  word: string
+  word?: string
+  children?: ReactNode
   className?: string
   variant?: {
     hidden: { filter: string; opacity: number }
@@ -14,8 +15,10 @@ interface BlurInProps {
   delay?: number
   duration?: number
 }
+
 const BlurIn = ({
   word,
+  children,
   className,
   variant,
   delay = 0,
@@ -28,15 +31,15 @@ const BlurIn = ({
   const combinedVariants = variant || defaultVariants
 
   return (
-    <motion.h1
+    <motion.div
       initial="hidden"
       animate="visible"
       transition={{ duration, delay }}
       variants={combinedVariants}
       className={cn('drop-shadow-sm', className)}
     >
-      {word}
-    </motion.h1>
+      {children || word}
+    </motion.div>
   )
 }
 
