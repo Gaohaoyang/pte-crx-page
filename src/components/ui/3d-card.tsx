@@ -54,8 +54,8 @@ export const CardContainer = ({
     if (!containerRef.current || isMobileDevice) return
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect()
-    const x = (e.clientX - left - width / 2) / 25
-    const y = (e.clientY - top - height / 2) / 25
+    const x = (e.clientX - left - width / 2) / 16
+    const y = -(e.clientY - top - height / 2) / 16
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
   }
 

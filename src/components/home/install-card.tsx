@@ -18,7 +18,7 @@ const InstallCard = () => {
               className="h-20 w-20 rounded-md shadow-lg"
             />
           </CardItem>
-          <div className="inter-var ml-0 flex-1 [transform-style:preserve-3d] md:ml-0 lg:ml-4 xl:ml-0 2xl:ml-0 [&>*]:[transform-style:preserve-3d]">
+          <div className="inter-var ml-0 flex-1 [transform-style:preserve-3d] md:ml-6 lg:ml-4 xl:ml-0 2xl:ml-0 [&>*]:[transform-style:preserve-3d]">
             <CardItem
               translateZ={90}
               translateX={5}

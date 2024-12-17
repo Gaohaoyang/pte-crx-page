@@ -8,9 +8,9 @@ export default function Home() {
       <div className="container p-4">
         {/* intro and install */}
         <div className="flex flex-wrap gap-4">
-          <div className="w-2/3 text-base">
+          <div className="w-full text-base lg:w-2/3 xl:w-2/3 2xl:w-2/3">
             <div className="text-lg font-bold">
-              Automatically show your sub-scores and details.
+              Automatically show your PTE sub-scores and details.
             </div>
             <div className="text-lg font-bold">
               So you don&apos;t have to press{' '}
@@ -33,7 +33,7 @@ export default function Home() {
           <InstallCard />
         </div>
 
-        <div className="h-96">hi</div>
+        <div className="mt-44 h-96">hi</div>
         <div className="h-96">hi</div>
         <div className="h-96">hi</div>
         <div className="h-96">hi</div>
