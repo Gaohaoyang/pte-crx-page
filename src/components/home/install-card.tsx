@@ -8,7 +8,7 @@ const InstallCard = () => {
   return (
     <CardContainer containerClassName="flex flex-1" className="inter-var">
       <CardBody className="group/card relative flex w-full flex-1 flex-col items-center justify-between rounded-xl border border-black/[0.1] px-2 py-4 shadow-md transition-shadow duration-300 dark:border-white/[0.2] dark:bg-slate-800 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] md:hover:shadow-2xl">
-        <div className="inter-var flex items-center justify-center gap-2">
+        <div className="inter-var ml-0 flex items-center justify-center gap-2 md:ml-0 lg:ml-5 xl:ml-0 2xl:ml-0">
           <CardItem translateZ={90} translateX={5}>
             <Image
               src={Logo}
@@ -18,11 +18,11 @@ const InstallCard = () => {
               className="h-20 w-20 rounded-md shadow-lg"
             />
           </CardItem>
-          <div className="inter-var flex-1 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]">
+          <div className="inter-var ml-0 flex-1 [transform-style:preserve-3d] md:ml-0 lg:ml-4 xl:ml-0 2xl:ml-0 [&>*]:[transform-style:preserve-3d]">
             <CardItem
               translateZ={90}
               translateX={5}
-              className="text-lg font-semibold drop-shadow-lg md:text-xl"
+              className="text-lg font-semibold drop-shadow-lg md:text-lg xl:text-xl"
             >
               PTE Sub-Scores Breakdown
             </CardItem>
