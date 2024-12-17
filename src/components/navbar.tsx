@@ -8,6 +8,7 @@ import { Button } from '@nextui-org/button'
 import { FaGithub } from 'react-icons/fa6'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
+import GradualSpacing from '@/components/ui/gradual-spacing'
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
@@ -29,7 +30,12 @@ const Navbar = () => {
                 height={28}
                 className="h-7 w-7 rounded-md"
               />
-              <div className="ml-2">PTE Sub-Scores Breakdown</div>
+              <GradualSpacing
+                className="ml-2 -tracking-[0.16rem]"
+                duration={0.5}
+                delayMultiple={0.05}
+                text="PTE Sub-Scores Breakdown"
+              />
             </Button>
           </div>
           <div>
