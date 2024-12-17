@@ -7,9 +7,9 @@ import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
 const InstallCard = () => {
   return (
     <CardContainer containerClassName="flex flex-1" className="inter-var">
-      <CardBody className="group/card relative flex w-full flex-1 flex-col items-center justify-between rounded-xl border border-black/[0.1] px-2 py-4 shadow-md transition-shadow duration-300 hover:shadow-2xl dark:border-white/[0.2] dark:bg-slate-800 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
+      <CardBody className="group/card relative flex w-full flex-1 flex-col items-center justify-between rounded-xl border border-black/[0.1] px-2 py-4 shadow-md transition-shadow duration-300 dark:border-white/[0.2] dark:bg-slate-800 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] md:hover:shadow-2xl">
         <div className="inter-var flex items-center justify-center gap-2">
-          <CardItem translateZ={90}>
+          <CardItem translateZ={90} translateX={5}>
             <Image
               src={Logo}
               alt="logo"
@@ -18,21 +18,22 @@ const InstallCard = () => {
               className="h-20 w-20 rounded-md shadow-lg"
             />
           </CardItem>
-          <div className="inter-var [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d] flex-1">
+          <div className="inter-var flex-1 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]">
             <CardItem
               translateZ={90}
+              translateX={5}
               className="text-lg font-semibold drop-shadow-lg md:text-xl"
             >
               PTE Sub-Scores Breakdown
             </CardItem>
-            <CardItem translateZ={80} className="drop-shadow-lg">
+            <CardItem translateZ={80} translateX={5} className="drop-shadow-lg">
               Chrome Extension
             </CardItem>
             <div className="mt-1 flex items-center text-gray-600">
               {[1, 2, 3, 4, 5].map((item, index) => (
                 <CardItem
                   translateZ={240 + 10 * Math.min(index, 4 - index)}
-                  translateX={20}
+                  translateX={25}
                   key={item}
                   className="text-xl drop-shadow-lg dark:text-yellow-500"
                 >
@@ -42,7 +43,11 @@ const InstallCard = () => {
             </div>
           </div>
         </div>
-        <CardItem translateZ={80} className="flex w-full justify-center">
+        <CardItem
+          translateZ={80}
+          translateX={5}
+          className="flex w-full justify-center"
+        >
           <Button
             color="primary"
             className="mt-4 w-11/12 rounded-full font-semibold shadow-lg"
