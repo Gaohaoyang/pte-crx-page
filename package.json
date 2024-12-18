@@ -11,6 +11,7 @@
   "dependencies": {
     "@nextui-org/button": "^2.2.7",
     "@radix-ui/react-slot": "^1.1.0",
+    "@tabler/icons-react": "^3.26.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.13.5",
