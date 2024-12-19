@@ -125,7 +125,7 @@ function App() {
       <div className="mt-3 flex flex-col items-center">
         <div className="flex w-full justify-between md:w-9/12">
           <div className="text-xl font-semibold">Donation list</div>
-          <div>Last updated: 2024-12-08</div>
+          <div>Last updated: 2024-12-19</div>
         </div>
         <table className="w-full border-collapse border-b-2 border-t-2 border-slate-400 text-center text-sm md:w-9/12 md:text-base">
           <thead>
@@ -138,7 +138,14 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {[
+            {[              
+              {
+                name: '*哈',
+                date: '2024-12-19',
+                amount: '￥18.00',
+                method: 'Wechat Pay',
+                message: '感谢制作了这个pte小分插件',
+              },
               {
                 name: 'E*Y',
                 date: '2024-12-08',
