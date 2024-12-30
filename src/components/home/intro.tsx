@@ -11,26 +11,23 @@ const Intro = () => {
         className="text-lg font-bold"
       ></BlurIn>
       <BlurIn duration={0.4} delay={0.3} className="text-lg font-bold">
-        So you don&apos;t have to press{' '}
+        So you don&apos;t need to press{' '}
         <code className="rounded-md bg-slate-100 p-1 text-sm dark:bg-slate-800">
           F12
         </code>{' '}
-        to open the console to check manually.
+        to open the console for a manual check.
       </BlurIn>
       <BlurIn
         delay={0.6}
         duration={0.4}
         className="mt-3"
-        word="Just open your PTE score web page after installing, and you'll see
-        a clear breakdown of your performance, including sub-scores, CLB levels
-        (for PTE-core), IELTS equivalent scores, and more."
+        word="Simply open your PTE score webpage after installing, and you'll see a clear breakdown of your performance, including sub-scores, CLB levels (for PTE-core), IELTS equivalent scores, and more."
       ></BlurIn>
       <BlurIn
         delay={0.9}
         duration={0.4}
         className="mt-3"
-        word="Explore this panel to get a better idea of your strengths and where you
-        can improve! Wish you great success!"
+        word="Explore this panel to better understand your strengths and areas for improvement! Wishing you great success!"
       ></BlurIn>
     </div>
   )
