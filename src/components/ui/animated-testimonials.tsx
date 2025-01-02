@@ -39,15 +39,16 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay])
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10
+  const getRotation = (index: number) => {
+    const rotations = [-8, -4, 0, 4, 8]
+    return rotations[index % rotations.length]
   }
 
   return (
     <div className="flex w-full justify-center">
       <div className="relative flex flex-wrap">
         <div className="w-[630px]">
-          <div className="relative h-[600px] w-[530px] p-4">
+          <div className="relative h-[560px] w-[480px] p-4">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -56,23 +57,23 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: randomRotateY(),
+                    rotate: getRotation(index),
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : getRotation(index),
                     zIndex: isActive(index)
                       ? 999
                       : testimonials.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
-                    opacity: '0',
-                    scale: '0.9',
-                    z: 100,
-                    rotate: randomRotateY(),
+                    opacity: 0,
+                    scale: 0.9,
+                    z: -100,
+                    rotate: getRotation(index),
                   }}
                   transition={{
                     duration: 0.4,

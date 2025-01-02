@@ -8,7 +8,8 @@ export const bannerData = [
       "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
     name: 'Sarah Chen',
     designation: 'Product Manager at TechFlow',
-    src: 'https://placehold.co/800x400.png',
+    // src: 'https://placehold.co/800x400.png',
+    src: sample2,
   },
   {
     quote:
@@ -30,6 +31,27 @@ export const bannerData = [
     name: 'James Kim',
     designation: 'Engineering Lead at DataPro',
     src: sample1,
+  },
+  {
+    quote:
+      'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
+    name: 'Lisa Thompson',
+    designation: 'VP of Technology at FutureNet',
+    src: sample2,
+  },
+  {
+    quote:
+      'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
+    name: 'Lisa Thompson',
+    designation: 'VP of Technology at FutureNet',
+    src: sample2,
+  },
+  {
+    quote:
+      'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
+    name: 'Lisa Thompson',
+    designation: 'VP of Technology at FutureNet',
+    src: sample2,
   },
   {
     quote:
