@@ -2,7 +2,10 @@
 
 import InstallCard from '@/components/home/install-card'
 import Intro from '@/components/home/intro'
-import CardArea from '@/components/home/card-area'
+// import CardArea from '@/components/home/card-area'
+// import CardCarousel from '@/components/home/card-carousel'
+import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
+import { bannerData } from '@/lib/data'
 
 export default function Home() {
   return (
@@ -13,7 +16,9 @@ export default function Home() {
           <Intro />
           <InstallCard />
         </div>
-        <CardArea />
+        {/* <CardCarousel /> */}
+        <AnimatedTestimonials testimonials={bannerData} />
+        {/* <CardArea /> */}
         <div className="mt-44 h-96">hi</div>
         <div className="h-96">hi</div>
         <div className="h-96">hi</div>

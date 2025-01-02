@@ -44,10 +44,10 @@ export const AnimatedTestimonials = ({
   }
 
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
-        <div>
-          <div className="relative h-[600px] w-[530px]">
+    <div className="flex w-full justify-center">
+      <div className="relative flex flex-wrap">
+        <div className="w-[630px]">
+          <div className="relative h-[600px] w-[530px] p-4">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -69,8 +69,8 @@ export const AnimatedTestimonials = ({
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
-                    opacity: 0,
-                    scale: 0.9,
+                    opacity: '0',
+                    scale: '0.9',
                     z: 100,
                     rotate: randomRotateY(),
                   }}
@@ -78,7 +78,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: 'easeInOut',
                   }}
-                  className="absolute inset-0 origin-bottom"
+                  className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl bg-white shadow-xl"
                 >
                   <Image
                     src={testimonial.src}
@@ -86,14 +86,14 @@ export const AnimatedTestimonials = ({
                     width={500}
                     height={800}
                     draggable={false}
-                    className="h-full w-full rounded bg-slate-100 object-contain object-center shadow-xl"
+                    className="h-[98%] w-[98%] object-contain object-center"
                   />
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex w-[300px] flex-col justify-between py-4">
           <motion.div
             key={active}
             initial={{
