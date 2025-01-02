@@ -4,6 +4,7 @@ import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
+import questionTypes from '@/lib/questionTypes'
 
 type Testimonial = {
   content: string
@@ -18,6 +19,19 @@ const TestimonialContent = ({ content }: { content: string }) => {
     setIsMounted(true)
   }, [])
 
+  const processContent = (text: string) => {
+    // Split the text into words and process each word
+    return text
+      .split(/\b/)
+      .map((word) => {
+        if (word in questionTypes) {
+          return `<strong>${word}</strong>`
+        }
+        return word
+      })
+      .join('')
+  }
+
   if (!isMounted) {
     return (
       <div
@@ -25,7 +39,7 @@ const TestimonialContent = ({ content }: { content: string }) => {
         dangerouslySetInnerHTML={{
           __html: content
             .split('\n')
-            .map((text) => `<p>${text}</p>`)
+            .map((text) => `<p>${processContent(text)}</p>`)
             .join(''),
         }}
       />
@@ -52,7 +66,7 @@ const TestimonialContent = ({ content }: { content: string }) => {
         dangerouslySetInnerHTML={{
           __html: content
             .split('\n')
-            .map((text) => `<p>${text}</p>`)
+            .map((text) => `<p>${processContent(text)}</p>`)
             .join(''),
         }}
       />
