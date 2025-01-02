@@ -4,18 +4,18 @@ import sample3 from '@/assets/home/sample3.png'
 
 export const bannerData = [
   {
-    id: '1',
-    content:
-      'For this case, Writing is excellent, so these question types WE, WFD, SST, and SWT, should be quite good.\nHowever, speaking needs improvement, especially in the RA, RS, and ASQ question types.',
-    name: 'Weaknesses in RA/RS/ASQ',
-    src: sample2,
-  },
-  {
     id: '2',
     content:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: 'Michael Rodriguez',
+      'Writing (90): Strongest skill with perfect scores in all areas - WE, SST, SWT.\nSpeaking (90): Excellent in short tasks (RA, RS, ASQ), slightly lower in Extended Speaking (DI, RTS).\nListening (85): Good but needs improvement in MCM-L and MCS-L comprehension tasks.\nReading (81): Relatively weakest skill, particularly in RO, MCM-R, MCS-R, and FIB-R tasks.',
+    name: 'Excellent in Most Skills, Focus on RO/MCM-R/FIB-R',
     src: sample3,
+  },
+  {
+    id: '1',
+    content:
+      'Writing (89): Excellent performance in Extended Writing (WE, SST, SWT) and good in Short Writing (WFD, FIB-RW).\nListening (71): Moderate, needs improvement in Single-skill tasks (MCM-L, MCS-L).\nSpeaking (69): Weak in Short Speaking (RA, RS, ASQ), better in Extended Speaking (DI, RTS).\nReading (67): Weakest skill, particularly struggling with comprehension tasks.',
+    name: 'Strong Extended Tasks, Improve RS/RA/RO/MCM',
+    src: sample2,
   },
   {
     id: '3',
