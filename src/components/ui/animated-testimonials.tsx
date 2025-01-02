@@ -21,16 +21,18 @@ const TestimonialContent = ({ content }: { content: string }) => {
   }, [])
 
   const processContent = (text: string) => {
-    // Split the text into words and process each word
-    return text
-      .split(/\b/)
+    // First check for complete question types (including hyphenated ones)
+    const words = text.split(/\s+/)
+    return words
       .map((word) => {
-        if (word in questionTypes) {
+        // Remove any punctuation or special characters for checking
+        const cleanWord = word.replace(/[.,!?()]/g, '').trim()
+        if (cleanWord in questionTypes) {
           return `<strong>${word}</strong>`
         }
         return word
       })
-      .join('')
+      .join(' ')
   }
 
   if (!isMounted) {
