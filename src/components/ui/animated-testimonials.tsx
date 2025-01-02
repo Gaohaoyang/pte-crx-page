@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import questionTypes from '@/lib/questionTypes'
 
 type Testimonial = {
+  id: string
   content: string
   name: string
   src: string | StaticImageData
@@ -35,11 +36,11 @@ const TestimonialContent = ({ content }: { content: string }) => {
   if (!isMounted) {
     return (
       <div
-        className="mt-8 text-lg text-gray-600 dark:text-neutral-300"
+        className="mt-8 text-gray-600 dark:text-neutral-300"
         dangerouslySetInnerHTML={{
           __html: content
             .split('\n')
-            .map((text) => `<p>${processContent(text)}</p>`)
+            .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
             .join(''),
         }}
       />
@@ -47,7 +48,7 @@ const TestimonialContent = ({ content }: { content: string }) => {
   }
 
   return (
-    <motion.p className="mt-8 text-lg text-gray-600 dark:text-neutral-300">
+    <motion.p className="mt-8 text-gray-600 dark:text-neutral-300">
       <motion.span
         initial={{
           filter: 'blur(10px)',
@@ -66,7 +67,7 @@ const TestimonialContent = ({ content }: { content: string }) => {
         dangerouslySetInnerHTML={{
           __html: content
             .split('\n')
-            .map((text) => `<p>${processContent(text)}</p>`)
+            .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
             .join(''),
         }}
       />
@@ -108,9 +109,9 @@ export const AnimatedTestimonials = ({
   }
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="mt-4 flex w-full justify-center">
       <div className="relative flex flex-wrap">
-        <div className="w-[630px]">
+        <div className="w-[600px]">
           <div className="relative h-[560px] w-[490px]">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
@@ -157,7 +158,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex w-[300px] flex-col justify-between py-4">
+        <div className="flex w-[340px] flex-col justify-between py-4">
           <motion.div
             className="flex flex-1 flex-col justify-center"
             key={active}
@@ -178,12 +179,15 @@ export const AnimatedTestimonials = ({
               ease: 'easeInOut',
             }}
           >
-            <h3 className="text-xl font-bold text-black dark:text-white">
-              {testimonials[active].name}
+            <h3 className="text-lg font-bold text-black dark:text-white">
+              {testimonials[active].name}{' '}
+              <span className="ml-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
+                Sample {testimonials[active].id}
+              </span>
             </h3>
             <TestimonialContent content={testimonials[active].content} />
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="mb-4 flex gap-4">
             <button
               onClick={handlePrev}
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"

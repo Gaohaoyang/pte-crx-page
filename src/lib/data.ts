@@ -6,8 +6,8 @@ export const bannerData = [
   {
     id: '1',
     content:
-      'Writing is excellent, so these question types—WE, WFD, SST, and SWT—should be quite good.\nHowever, speaking needs improvement, especially in the RA, RS, and ASQ question types.',
-    name: 'Examples of weaknesses in RA/RS/ASQ',
+      'For this case, Writing is excellent, so these question types WE, WFD, SST, and SWT, should be quite good.\nHowever, speaking needs improvement, especially in the RA, RS, and ASQ question types.',
+    name: 'Weaknesses in RA/RS/ASQ',
     src: sample2,
   },
   {
@@ -15,7 +15,7 @@ export const bannerData = [
     content:
       "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
     name: 'Michael Rodriguez',
-    src: sample2,
+    src: sample3,
   },
   {
     id: '3',
