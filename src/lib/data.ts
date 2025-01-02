@@ -6,18 +6,15 @@ export const bannerData = [
   {
     id: '1',
     content:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: 'Sarah Chen',
-    designation: 'Product Manager at TechFlow',
-    // src: 'https://placehold.co/800x400.png',
-    src: sample1,
+      'Writing is excellent, so these question types—WE, WFD, SST, and SWT—should be quite good.\nHowever, speaking needs improvement, especially in the RA, RS, and ASQ question types.',
+    name: 'Examples of weaknesses in RA/RS/ASQ',
+    src: sample2,
   },
   {
     id: '2',
     content:
       "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
     name: 'Michael Rodriguez',
-    designation: 'CTO at InnovateSphere',
     src: sample2,
   },
   {
@@ -25,7 +22,6 @@ export const bannerData = [
     content:
       "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
     name: 'Emily Watson',
-    designation: 'Operations Director at CloudScale',
     src: sample3,
   },
   {
@@ -33,7 +29,6 @@ export const bannerData = [
     content:
       "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
     name: 'James Kim',
-    designation: 'Engineering Lead at DataPro',
     src: sample1,
   },
   {
@@ -41,7 +36,6 @@ export const bannerData = [
     content:
       'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
     name: 'Lisa Thompson',
-    designation: 'VP of Technology at FutureNet',
     src: sample2,
   },
   {
@@ -49,7 +43,6 @@ export const bannerData = [
     content:
       'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
     name: 'Lisa Thompson',
-    designation: 'VP of Technology at FutureNet',
     src: sample2,
   },
   {
@@ -57,7 +50,6 @@ export const bannerData = [
     content:
       'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
     name: 'Lisa Thompson',
-    designation: 'VP of Technology at FutureNet',
     src: sample2,
   },
   {
@@ -65,7 +57,6 @@ export const bannerData = [
     content:
       'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
     name: 'Lisa Thompson',
-    designation: 'VP of Technology at FutureNet',
     src: sample2,
   },
 ]
