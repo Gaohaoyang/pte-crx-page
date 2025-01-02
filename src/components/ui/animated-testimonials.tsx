@@ -6,7 +6,7 @@ import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 
 type Testimonial = {
-  quote: string
+  content: string
   name: string
   designation: string
   src: string | StaticImageData
@@ -40,7 +40,7 @@ export const AnimatedTestimonials = ({
   }, [autoplay])
 
   const getRotation = (index: number) => {
-    const rotations = [-8, -4, 0, 4, 8]
+    const rotations = [-10, -8, -4, 0, 4, 8, 10]
     return rotations[index % rotations.length]
   }
 
@@ -48,7 +48,7 @@ export const AnimatedTestimonials = ({
     <div className="flex w-full justify-center">
       <div className="relative flex flex-wrap">
         <div className="w-[630px]">
-          <div className="relative h-[560px] w-[480px] p-4">
+          <div className="relative h-[560px] w-[480px]">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -79,7 +79,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: 'easeInOut',
                   }}
-                  className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl bg-white shadow-xl"
+                  className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl border border-slate-200 bg-white shadow-md"
                 >
                   <Image
                     src={testimonial.src}
@@ -121,7 +121,7 @@ export const AnimatedTestimonials = ({
               {testimonials[active].designation}
             </p>
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
-              {testimonials[active].quote.split(' ').map((word, index) => (
+              {testimonials[active].content.split(' ').map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{
