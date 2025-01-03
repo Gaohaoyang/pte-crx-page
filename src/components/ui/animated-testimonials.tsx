@@ -1,7 +1,7 @@
 'use client'
 
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 import questionTypes from '@/lib/questionTypes'
@@ -161,7 +161,7 @@ export const AnimatedTestimonials = ({
   }, [])
 
   const getRotation = (index: number) => {
-    const rotations = [-10, -8, -4, 0, 4, 8, 10]
+    const rotations = [-4, 0, 4, -8, 8, -10, 10]
     return rotations[index % rotations.length]
   }
 
@@ -204,7 +204,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: 'easeInOut',
                   }}
-                  className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl border border-slate-200 bg-white shadow-md  dark:border-neutral-500"
+                  className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl border border-slate-200 bg-white shadow-md dark:border-neutral-500"
                 >
                   <Image
                     src={testimonial.src}
@@ -214,7 +214,7 @@ export const AnimatedTestimonials = ({
                     draggable={false}
                     className="h-[98%] w-[98%] object-contain object-center"
                   />
-                  <div className="absolute inset-0 z-[1] bg-black/20 dark:block hidden rounded-xl" />
+                  <div className="absolute inset-0 z-[1] hidden rounded-xl bg-black/20 dark:block" />
                 </motion.div>
               ))}
             </AnimatePresence>

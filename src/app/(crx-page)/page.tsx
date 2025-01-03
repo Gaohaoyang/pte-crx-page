@@ -4,7 +4,7 @@ import InstallCard from '@/components/home/install-card'
 import Intro from '@/components/home/intro'
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
 import { bannerData } from '@/lib/data'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import HowItWorks from '@/components/home/how-it-works'
 
 export default function Home() {

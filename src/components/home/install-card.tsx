@@ -3,7 +3,7 @@ import { MdStar } from 'react-icons/md'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 const InstallCard = () => {
   return (
