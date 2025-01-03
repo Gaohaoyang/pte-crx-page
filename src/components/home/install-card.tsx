@@ -1,4 +1,4 @@
-import { Button } from '@nextui-org/button'
+import { Button } from '@nextui-org/react'
 import { MdStar } from 'react-icons/md'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'

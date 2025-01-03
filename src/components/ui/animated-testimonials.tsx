@@ -93,10 +93,14 @@ const TestimonialContent = ({ content }: { content: string }) => {
                   ) {
                     const full = node.getAttribute('data-full')
                     return (
-                      <Tooltip key={nodeIndex} content={full} delay={0}>
-                        <span className="cursor-help font-bold">
-                          {node.textContent}
-                        </span>
+                      <Tooltip
+                        key={nodeIndex}
+                        content={full}
+                        delay={0}
+                        color="foreground"
+                        showArrow
+                      >
+                        <span className="font-bold">{node.textContent}</span>
                       </Tooltip>
                     )
                   }
