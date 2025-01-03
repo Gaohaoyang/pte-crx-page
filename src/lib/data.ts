@@ -1,8 +1,14 @@
 import sample1 from '@/assets/home/sample1.png'
 import sample2 from '@/assets/home/sample2.png'
 import sample3 from '@/assets/home/sample3.png'
-
+import sample4 from '@/assets/home/sample4.png'
 export const bannerData = [
+  {
+    id: '4',
+    content: 'test',
+    name: 'test',
+    src: sample4,
+  },
   {
     id: '3',
     content:
