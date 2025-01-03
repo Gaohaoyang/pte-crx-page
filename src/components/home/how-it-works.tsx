@@ -36,7 +36,7 @@ const HowItWorks = () => {
         panel.
       </p>
       <div
-        className="relative mt-10 mx-auto flex w-[60%] items-center justify-center"
+        className="relative mx-auto mt-10 flex w-[60%] items-center justify-center"
         ref={containerRef}
       >
         <div className="flex w-full flex-col items-stretch justify-between gap-10">
