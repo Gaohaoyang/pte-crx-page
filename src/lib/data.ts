@@ -6,7 +6,7 @@ export const bannerData = [
   {
     id: '3',
     content:
-      'Listening: Strong in Single-skill tasks (MCM-L, MCS-L, SMW), needs attention in Multiple-skills tasks (WFD, RS, SST).\nSpeaking: Excellent performance in both Extended Speaking (DI, RTS) and Short Speaking tasks (RA, RS, ASQ).\nReading: Outstanding in Single-skill Comprehension (MCM-R, MCS-R, RO) and Multiple-skills (FIB-R, FIB-RW).\nWriting: Strong in Extended Writing (WE, SST, SWT) and Open Response, room for improvement in Short Writing (WFD, FIB-RW).',
+      'Listening: Strong in Single-skill tasks (MCM-L, MCS-L, SMW), needs attention in Multiple-skills tasks (WFD).\nSpeaking: Excellent performance in both Extended Speaking (DI, RTS) and Short Speaking tasks (RA, RS, ASQ).\nReading: Outstanding in Single-skill Comprehension (MCM-R, MCS-R, RO) and Multiple-skills (FIB-R, FIB-RW).\nWriting: Strong in Extended Writing (WE, SST, SWT) and Open Response, room for improvement in Short Writing (WFD, FIB-RW).',
     name: 'Balanced High Scorer, Exceptional in Reading/Speaking',
     src: sample1,
   },

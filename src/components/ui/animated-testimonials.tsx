@@ -125,14 +125,14 @@ export const AnimatedTestimonials = ({
   }
 
   return (
-    <div className="mt-4 flex w-full justify-center">
+    <div className="mt-6 flex w-full justify-center md:mt-8 lg:mt-4">
       <div
         className="relative flex flex-wrap"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="w-[600px]">
-          <div className="relative h-[560px] w-[490px]">
+        <div className="w-full md:w-[460px] lg:ml-20 lg:w-[580px]">
+          <div className="relative h-[100vw] w-full md:h-[500px] md:w-[430px] lg:h-[560px] lg:w-[490px]">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -178,9 +178,9 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex w-[340px] flex-col justify-between py-4">
+        <div className="z-10 flex flex-1 flex-col justify-between py-4">
           <motion.div
-            className="flex flex-1 flex-col justify-center"
+            className="my-4 flex flex-1 flex-col justify-center"
             key={active}
             initial={{
               y: 20,
