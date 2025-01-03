@@ -241,10 +241,10 @@ export const AnimatedTestimonials = ({
             }}
           >
             <h3 className="text-lg font-bold text-black dark:text-white">
-              {testimonials[active].name}{' '}
-              <span className="ml-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
+              <span className="mr-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
                 Sample {testimonials[active].id}
               </span>
+              {testimonials[active].name}{' '}
             </h3>
             <TestimonialContent content={testimonials[active].content} />
           </motion.div>
