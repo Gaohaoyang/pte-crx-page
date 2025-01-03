@@ -6,6 +6,7 @@ import Intro from '@/components/home/intro'
 // import CardCarousel from '@/components/home/card-carousel'
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
 import { bannerData } from '@/lib/data'
+import { motion } from 'framer-motion'
 
 export default function Home() {
   return (
@@ -17,7 +18,13 @@ export default function Home() {
           <InstallCard />
         </div>
         {/* <CardCarousel /> */}
-        <AnimatedTestimonials testimonials={bannerData} autoplay={false} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <AnimatedTestimonials testimonials={bannerData} autoplay={false} />
+        </motion.div>
         {/* <CardArea /> */}
         <div className="mt-44 h-96">hi</div>
         <div className="h-96">hi</div>
