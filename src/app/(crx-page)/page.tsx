@@ -17,7 +17,7 @@ export default function Home() {
           <InstallCard />
         </div>
         {/* <CardCarousel /> */}
-        <AnimatedTestimonials testimonials={bannerData} />
+        <AnimatedTestimonials testimonials={bannerData} autoplay />
         {/* <CardArea /> */}
         <div className="mt-44 h-96">hi</div>
         <div className="h-96">hi</div>

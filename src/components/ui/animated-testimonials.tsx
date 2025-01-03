@@ -85,6 +85,7 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean
 }) => {
   const [active, setActive] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length)
@@ -99,11 +100,11 @@ export const AnimatedTestimonials = ({
   }
 
   useEffect(() => {
-    if (autoplay) {
+    if (autoplay && !isPaused) {
       const interval = setInterval(handleNext, 5000)
       return () => clearInterval(interval)
     }
-  }, [autoplay])
+  }, [autoplay, isPaused])
 
   const getRotation = (index: number) => {
     const rotations = [-10, -8, -4, 0, 4, 8, 10]
@@ -112,7 +113,11 @@ export const AnimatedTestimonials = ({
 
   return (
     <div className="mt-4 flex w-full justify-center">
-      <div className="relative flex flex-wrap">
+      <div
+        className="relative flex flex-wrap"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="w-[600px]">
           <div className="relative h-[560px] w-[490px]">
             <AnimatePresence>
