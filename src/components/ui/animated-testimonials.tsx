@@ -106,6 +106,19 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay, isPaused])
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        handlePrev()
+      } else if (event.key === 'ArrowRight') {
+        handleNext()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   const getRotation = (index: number) => {
     const rotations = [-10, -8, -4, 0, 4, 8, 10]
     return rotations[index % rotations.length]
