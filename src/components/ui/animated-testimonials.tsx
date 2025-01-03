@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 import questionTypes from '@/lib/questionTypes'
+import { Tooltip } from '@nextui-org/react'
 
 type Testimonial = {
   id: string
@@ -21,60 +22,96 @@ const TestimonialContent = ({ content }: { content: string }) => {
   }, [])
 
   const processContent = (text: string) => {
-    // First check for complete question types (including hyphenated ones)
     const words = text.split(/\s+/)
     return words
       .map((word) => {
-        // Remove any punctuation or special characters for checking
         const cleanWord = word.replace(/[.,!?()]/g, '').trim()
-        if (cleanWord in questionTypes) {
-          return `<strong>${word}</strong>`
+        if (
+          cleanWord in questionTypes &&
+          typeof questionTypes[cleanWord as keyof typeof questionTypes] ===
+            'string'
+        ) {
+          return `<span class="question-type" data-type="${cleanWord}" data-full="${
+            questionTypes[cleanWord as keyof typeof questionTypes]
+          }">${word}</span>`
         }
         return word
       })
       .join(' ')
   }
 
-  if (!isMounted) {
+  const renderContent = () => {
+    const processedContent = content
+      .split('\n')
+      .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
+      .join('')
+
+    if (!isMounted) {
+      return (
+        <div
+          className="mt-8 text-gray-600 dark:text-neutral-300"
+          dangerouslySetInnerHTML={{
+            __html: processedContent,
+          }}
+        />
+      )
+    }
+
     return (
-      <div
-        className="mt-8 text-gray-600 dark:text-neutral-300"
-        dangerouslySetInnerHTML={{
-          __html: content
-            .split('\n')
-            .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
-            .join(''),
-        }}
-      />
+      <motion.div className="mt-8 text-gray-600 dark:text-neutral-300">
+        <motion.div
+          initial={{
+            filter: 'blur(10px)',
+            opacity: 0,
+            y: 5,
+          }}
+          animate={{
+            filter: 'blur(0px)',
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.2,
+            ease: 'easeInOut',
+          }}
+        >
+          {content.split('\n').map((text, index) => {
+            const processedHtml = processContent(text)
+            const container = document.createElement('div')
+            container.innerHTML = processedHtml
+
+            return (
+              <div key={index} className="mb-2">
+                {Array.from(container.childNodes).map((node, nodeIndex) => {
+                  if (node.nodeType === Node.TEXT_NODE) {
+                    return <span key={nodeIndex}>{node.textContent}</span>
+                  }
+
+                  if (
+                    node instanceof HTMLElement &&
+                    node.classList.contains('question-type')
+                  ) {
+                    const full = node.getAttribute('data-full')
+                    return (
+                      <Tooltip key={nodeIndex} content={full} delay={0}>
+                        <span className="cursor-help font-bold">
+                          {node.textContent}
+                        </span>
+                      </Tooltip>
+                    )
+                  }
+
+                  return null
+                })}
+              </div>
+            )
+          })}
+        </motion.div>
+      </motion.div>
     )
   }
 
-  return (
-    <motion.p className="mt-8 text-gray-600 dark:text-neutral-300">
-      <motion.span
-        initial={{
-          filter: 'blur(10px)',
-          opacity: 0,
-          y: 5,
-        }}
-        animate={{
-          filter: 'blur(0px)',
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.2,
-          ease: 'easeInOut',
-        }}
-        dangerouslySetInnerHTML={{
-          __html: content
-            .split('\n')
-            .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
-            .join(''),
-        }}
-      />
-    </motion.p>
-  )
+  return renderContent()
 }
 
 export const AnimatedTestimonials = ({
