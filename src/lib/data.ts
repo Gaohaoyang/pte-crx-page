@@ -2,7 +2,16 @@ import sample1 from '@/assets/home/sample1.png'
 import sample2 from '@/assets/home/sample2.png'
 import sample3 from '@/assets/home/sample3.png'
 import sample4 from '@/assets/home/sample4.png'
+import sample5 from '@/assets/home/sample5.png'
+
 export const bannerData = [
+  {
+    id: '5',
+    content:
+      'Reading (90): Excellent in both Single-skill (MCM-R, MCS-R, RO) and Multiple-skills tasks (FIB-R, FIB-RW).\nSpeaking (85): Strong performance in both Extended (DI, RL) and Short Speaking (RA, RS, ASQ).\nWriting (84): Very good in Short Writing (WFD) with room for improvement in Extended Writing (WE, SWT, SST).\nListening (77): Good in Single-skill (MCM-L, MCS-L, SMW) but needs attention in Multiple-skills tasks (FIB-L, HCS, HIW).',
+    name: 'Excellent at Reading/Speaking, Enhance WE/SST',
+    src: sample5,
+  },
   {
     id: '4',
     content:
