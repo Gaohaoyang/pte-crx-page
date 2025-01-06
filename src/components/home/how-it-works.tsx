@@ -23,21 +23,10 @@ const HowItWorks = () => {
         panel.
       </p>
       <div
-        className="relative mx-auto flex w-[60%] items-center justify-center pt-20"
+        className="relative mx-auto flex w-[96%] items-center justify-center pt-20 md:w-[80%] lg:w-[60%]"
         ref={containerRef}
       >
         <div className="flex w-full flex-col items-stretch justify-between">
-          <div className="flex justify-end">
-            <div
-              ref={divPteServerRef}
-              className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
-            >
-              <FaServer className="text-2xl" />
-              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm text-gray-500">
-                PTE Server
-              </div>
-            </div>
-          </div>
           <div className="flex justify-between">
             <div
               ref={divUserRef}
@@ -50,23 +39,27 @@ const HowItWorks = () => {
             </div>
             <div
               ref={divPtePageRef}
-              className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+              className="relative z-10 mr-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <FaChrome className="text-2xl" />
               <div className="absolute -left-[22] -top-6 w-44 text-center text-sm text-gray-500">
                 PTE Website
               </div>
             </div>
-            <div className="h-14 w-14"></div>
-            <div className="h-14 w-14"></div>
+            <div
+              ref={divPteServerRef}
+              className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+            >
+              <FaServer className="text-2xl" />
+              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm text-gray-500">
+                PTE Server
+              </div>
+            </div>
           </div>
-          <div className="mt-10 flex justify-between">
-            <div className="h-14 w-14"></div>
-            <div className="h-14 w-14"></div>
-            <div className="h-14 w-14"></div>
+          <div className="mt-0 flex justify-center">
             <div
               ref={divExtensionRef}
-              className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+              className="relative z-10 ml-24 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <Image
                 src={Logo}
@@ -75,39 +68,61 @@ const HowItWorks = () => {
                 height={28}
                 className="h-7 w-7 rounded-sm"
               />
-              <div className="absolute -left-[40] -top-11 w-80 text-center text-sm text-gray-500">
+              <div className="absolute -bottom-11 -left-[40] w-80 text-center text-sm text-gray-500">
                 PTE Sub-Scores Breakdown
                 <br />
                 <span className="text-xs">Chrome Extension</span>
               </div>
             </div>
-            <div className="h-14 w-14"></div>
-            <div className="h-14 w-14"></div>
           </div>
         </div>
 
         <AnimatedBeam
-          duration={4}
+          duration={5}
           containerRef={containerRef}
           fromRef={divUserRef}
           toRef={divPtePageRef}
-          curvature={0}
+          curvature={20}
+          startYOffset={-5}
+          endYOffset={-5}
         />
         <AnimatedBeam
-          duration={4}
+          duration={5}
           containerRef={containerRef}
           fromRef={divPtePageRef}
           toRef={divPteServerRef}
-          curvature={50}
+          curvature={20}
         />
         <AnimatedBeam
-          duration={4}
+          duration={5}
           containerRef={containerRef}
           toRef={divExtensionRef}
           fromRef={divPteServerRef}
-          curvature={-120}
-          startYOffset={10}
+          curvature={-40}
+          startYOffset={5}
           // endYOffset={10}
+          delay={2}
+          reverse
+        />
+        <AnimatedBeam
+          duration={5}
+          containerRef={containerRef}
+          toRef={divPtePageRef}
+          fromRef={divExtensionRef}
+          curvature={0}
+          // startYOffset={10}
+          // endYOffset={10}
+          delay={2}
+          reverse
+        />
+        <AnimatedBeam
+          duration={5}
+          containerRef={containerRef}
+          toRef={divUserRef}
+          fromRef={divPtePageRef}
+          curvature={-20}
+          startYOffset={5}
+          endYOffset={5}
           delay={2}
           reverse
         />
