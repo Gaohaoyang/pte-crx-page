@@ -24,6 +24,15 @@ export default function Home() {
           <AnimatedTestimonials testimonials={bannerData} autoplay={true} />
         </motion.div>
         <HowItWorks />
+
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+        <div className="mt-20 h-96">hi</div>
+
       </div>
     </div>
   )
