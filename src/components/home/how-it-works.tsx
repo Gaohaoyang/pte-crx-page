@@ -23,7 +23,7 @@ const HowItWorks = () => {
         panel.
       </p>
       <div
-        className="relative mx-auto flex w-[96%] items-center justify-center pt-20 md:w-[80%] lg:w-[60%]"
+        className="relative mx-auto flex w-[96%] items-center justify-center pt-20 text-gray-500 dark:text-gray-300 md:w-[80%] lg:w-[60%]"
         ref={containerRef}
       >
         <div className="flex w-full flex-col items-stretch justify-between">
@@ -33,7 +33,7 @@ const HowItWorks = () => {
               className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <LuUser className="text-2xl" />
-              <div className="absolute -top-6 left-0 w-full text-center text-sm text-gray-500">
+              <div className="absolute -top-6 left-0 w-full text-center text-sm">
                 User
               </div>
             </div>
@@ -42,7 +42,7 @@ const HowItWorks = () => {
               className="relative z-10 mr-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <FaChrome className="text-2xl" />
-              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm text-gray-500">
+              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm">
                 PTE Website
               </div>
             </div>
@@ -51,7 +51,7 @@ const HowItWorks = () => {
               className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <FaServer className="text-2xl" />
-              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm text-gray-500">
+              <div className="absolute -left-[22] -top-6 w-44 text-center text-sm">
                 PTE Server
               </div>
             </div>
@@ -68,7 +68,7 @@ const HowItWorks = () => {
                 height={28}
                 className="h-7 w-7 rounded-sm"
               />
-              <div className="absolute -bottom-11 -left-[40] w-80 text-center text-sm text-gray-500">
+              <div className="absolute -bottom-11 -left-[40] w-80 text-center text-sm font-bold text-gray-800 dark:text-gray-200">
                 PTE Sub-Scores Breakdown
                 <br />
                 <span className="text-xs">Chrome Extension</span>
