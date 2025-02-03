@@ -12,7 +12,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center">
       <div className="container p-4">
         {/* intro and install */}
-        <div className="mt-2 flex flex-wrap gap-4">
+        <div className="mt-6 flex flex-wrap gap-4">
           <Intro />
           <InstallCard />
         </div>
@@ -21,6 +21,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
+          <div className="text-3xl font-bold mt-10">Samples</div>
           <AnimatedTestimonials testimonials={bannerData} autoplay={true} />
         </motion.div>
         <HowItWorks />
@@ -32,7 +33,6 @@ export default function Home() {
         <div className="mt-20 h-96">hi</div>
         <div className="mt-20 h-96">hi</div>
         <div className="mt-20 h-96">hi</div>
-
       </div>
     </div>
   )

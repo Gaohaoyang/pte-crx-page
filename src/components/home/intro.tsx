@@ -8,11 +8,11 @@ const Intro = () => {
       <BlurIn
         duration={0.4}
         word="Automatically show your PTE sub-scores and details."
-        className="text-lg font-bold"
+        className="text-3xl font-bold"
       ></BlurIn>
-      <BlurIn duration={0.4} delay={0.3} className="text-lg font-bold">
+      <BlurIn duration={0.4} delay={0.3} className="mt-2 text-2xl font-bold">
         So you don&apos;t need to press{' '}
-        <code className="rounded-md bg-slate-100 p-1 text-sm dark:bg-slate-800">
+        <code className="rounded-md bg-slate-100 p-1 text-xl dark:bg-slate-800">
           F12
         </code>{' '}
         to open the console for a manual check.

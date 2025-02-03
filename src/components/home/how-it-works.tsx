@@ -16,7 +16,7 @@ const HowItWorks = () => {
   const divExtensionRef = useRef<HTMLDivElement>(null)
   return (
     <div className="mt-20">
-      <h2 className="text-xl font-bold">How It Works</h2>
+      <h2 className="text-3xl font-bold">How It Works</h2>
       <p className="mt-2">
         When you visit the PTE score page, the Chrome extension intercepts the
         API response, adds some question types, and renders them in the page
@@ -39,7 +39,7 @@ const HowItWorks = () => {
             </div>
             <div
               ref={divPtePageRef}
-              className="relative z-10 mr-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+              className="relative z-10 mr-0 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <FaChrome className="text-2xl" />
               <div className="absolute -left-[22] -top-6 w-44 text-center text-sm">
@@ -56,10 +56,10 @@ const HowItWorks = () => {
               </div>
             </div>
           </div>
-          <div className="mt-0 flex justify-center">
+          <div className="mt-14 flex justify-center">
             <div
               ref={divExtensionRef}
-              className="relative z-10 ml-24 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+              className="relative z-10 ml-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <Image
                 src={Logo}
@@ -92,15 +92,28 @@ const HowItWorks = () => {
           fromRef={divPtePageRef}
           toRef={divPteServerRef}
           curvature={20}
+          startYOffset={-5}
+          endYOffset={-5}
+        />
+        <AnimatedBeam
+          duration={5}
+          containerRef={containerRef}
+          toRef={divPtePageRef}
+          fromRef={divPteServerRef}
+          curvature={-20}
+          startYOffset={5}
+          endYOffset={5}
+          delay={2}
+          reverse
         />
         <AnimatedBeam
           duration={5}
           containerRef={containerRef}
           toRef={divExtensionRef}
-          fromRef={divPteServerRef}
-          curvature={-40}
-          startYOffset={5}
-          // endYOffset={10}
+          fromRef={divPtePageRef}
+          curvature={110}
+          startYOffset={15}
+          endYOffset={-25}
           delay={2}
           reverse
         />
@@ -110,10 +123,9 @@ const HowItWorks = () => {
           toRef={divPtePageRef}
           fromRef={divExtensionRef}
           curvature={0}
-          // startYOffset={10}
-          // endYOffset={10}
+          startYOffset={10}
+          endYOffset={10}
           delay={2}
-          reverse
         />
         <AnimatedBeam
           duration={5}
