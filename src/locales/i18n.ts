@@ -3,41 +3,50 @@ import i18n from 'i18next'
 import homeEn from '@/locales/en/home.json'
 import homeZh from '@/locales/zh/home.json'
 
-const LANGUAGE_KEY = 'pte-crx-language'
+const LANGUAGE_KEY = 'language'
 
 /**
  * Get user's preferred language from localStorage or browser settings
  */
 export const getPreferredLanguage = () => {
-  // Check localStorage first
-  const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem(LANGUAGE_KEY) : null
-  if (savedLanguage === 'en' || savedLanguage === 'zh') {
-    return savedLanguage
-  }
-
-  // If no saved language, detect from browser
-  const lang = typeof window !== 'undefined' && (navigator.languages ? navigator.languages[0] : navigator.language)
-  if (lang) {
-    if (
-      lang.includes('zh-Hant') ||
-      lang.includes('zh-HK') ||
-      lang.includes('zh-MO') ||
-      lang.includes('zh-TW')
-    ) {
-      return 'en'
-    } else if (lang.includes('zh')) {
-      return 'zh'
+  try {
+    // Check localStorage first
+    const savedLanguage = localStorage.getItem(LANGUAGE_KEY)
+    if (savedLanguage === 'en' || savedLanguage === 'zh') {
+      return savedLanguage
     }
+
+    // If no saved language, detect from browser
+    const lang = navigator.languages
+      ? navigator.languages[0]
+      : navigator.language
+    if (lang) {
+      if (
+        lang.includes('zh-Hant') ||
+        lang.includes('zh-HK') ||
+        lang.includes('zh-MO') ||
+        lang.includes('zh-TW')
+      ) {
+        return 'en'
+      } else if (lang.includes('zh')) {
+        return 'zh'
+      }
+    }
+    return 'en'
+  } catch (e) {
+    // Return default language if running on server or if there's any error
+    return 'en'
   }
-  return 'en'
 }
 
 /**
  * Save language preference to localStorage
  */
 export const saveLanguagePreference = (language: string) => {
-  if (typeof window !== 'undefined') {
+  try {
     localStorage.setItem(LANGUAGE_KEY, language)
+  } catch (e) {
+    // Ignore errors (e.g., when running on server)
   }
 }
 
