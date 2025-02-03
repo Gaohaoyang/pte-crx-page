@@ -33,9 +33,7 @@ function App() {
             className="size-20 rounded-xl md:size-24"
           />
           <div className="ml-4 flex flex-col items-start">
-            <h1 className="text-2xl font-semibold md:text-3xl">
-              PTE Sub-Scores Breakdown
-            </h1>
+            <h1 className="text-2xl font-semibold md:text-3xl">PTE Sub-Scores Breakdown</h1>
             <h2>Chrome Extension</h2>
             <div className="mt-1 flex items-center text-gray-600">
               {[1, 2, 3, 4, 5].map((item) => (
@@ -55,9 +53,7 @@ function App() {
       <div className="mt-6 text-3xl md:mt-8">
         Unlock Your PTE Potential: Analyze, Improve, Succeed!
       </div>
-      <div className="mt-3 text-xl">
-        Take control of your PTE journey today!
-      </div>
+      <div className="mt-3 text-xl">Take control of your PTE journey today!</div>
       <div className="mt-2 gap-0 md:flex md:flex-row-reverse md:justify-between">
         <div className="relative left-[-1rem] h-max w-screen md:left-0 md:w-2/3">
           <Swiper
@@ -81,10 +77,7 @@ function App() {
               'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/screenshot3.png',
               // 'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pte/ptePanel.jpg',
             ].map((item, index) => (
-              <SwiperSlide
-                key={`${item}_${index}`}
-                className="px-2 pb-8 md:px-5 md:py-8"
-              >
+              <SwiperSlide key={`${item}_${index}`} className="px-2 pb-8 md:px-5 md:py-8">
                 {/* <div
                   className="h-96 w-full rounded-lg bg-contain bg-center bg-no-repeat shadow-lg shadow-sky-950/55"
                   style={{
@@ -104,13 +97,12 @@ function App() {
         </div>
         <div className="mt-2 flex flex-col justify-center text-lg md:mt-0 md:w-2/5">
           <p className="mb-6 md:mb-10">
-            Simply visit your PTE score page after installation, where you’ll
-            find a detailed breakdown of your performance, including your
-            sub-scores, CLB levels, and more.
+            Simply visit your PTE score page after installation, where you’ll find a detailed
+            breakdown of your performance, including your sub-scores, CLB levels, and more.
           </p>
           <p className="md:mb-10">
-            Dive into this insightful panel to better understand your strengths
-            and areas for improvement.
+            Dive into this insightful panel to better understand your strengths and areas for
+            improvement.
           </p>
         </div>
       </div>
@@ -118,14 +110,14 @@ function App() {
         Donation
       </h2>
       <p className="mt-3">
-        If you found this helpful, feel free to sponsor me for a cup of coffee!
-        ☕ :) I really appreciate it. Have a great day!
+        If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really
+        appreciate it. Have a great day!
       </p>
       <p className="mt-1">Your name will appear on the donation list. ❤️</p>
       <div className="mt-3 flex flex-col items-center">
         <div className="flex w-full justify-between md:w-9/12">
           <div className="text-xl font-semibold">Donation list</div>
-          <div>Last updated: 2025-01-16</div>
+          <div>Last updated: 2025-01-29</div>
         </div>
         <table className="w-full border-collapse border-b-2 border-t-2 border-slate-400 text-center text-sm md:w-9/12 md:text-base">
           <thead>
@@ -139,6 +131,19 @@ function App() {
           </thead>
           <tbody>
             {[
+              {
+                name: '**宁',
+                date: '2025-01-29',
+                amount: '￥10.00',
+                method: 'AliPay',
+                message: '新年快乐🎆',
+              },
+              {
+                name: '**霏',
+                date: '2025-01-27',
+                amount: '￥5.00',
+                method: 'AliPay',
+              },
               {
                 name: 'j*n',
                 date: '2025-01-16',
@@ -213,9 +218,7 @@ function App() {
           </tbody>
         </table>
       </div>
-      <h2 className="mt-8 text-xl">
-        You can support me through the following methods.
-      </h2>
+      <h2 className="mt-8 text-xl">You can support me through the following methods.</h2>
       <div className="mt-3 flex flex-col flex-wrap items-center md:flex-row">
         <div className="mb-3 flex w-full flex-col items-center justify-center rounded-lg bg-slate-50 p-6 shadow-sm shadow-sky-950/35 md:mx-3 md:mb-6 md:h-64 md:w-60 md:shadow-md">
           <div className="font-bold">
@@ -314,7 +317,7 @@ function App() {
         }}
       />
     </>
-  )
+  );
 }
 
 export default App
