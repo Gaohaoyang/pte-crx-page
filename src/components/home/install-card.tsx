@@ -4,8 +4,10 @@ import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 
 const InstallCard = () => {
+  const { t } = useTranslation('home')
   return (
     <motion.div
       className="flex flex-1"
@@ -38,14 +40,14 @@ const InstallCard = () => {
                 translateX={5}
                 className="text-lg font-semibold drop-shadow-lg md:text-lg xl:text-xl"
               >
-                PTE Sub-Scores Breakdown
+                {t('PTE Sub-Scores Breakdown')}
               </CardItem>
               <CardItem
                 translateZ={80}
                 translateX={5}
                 className="drop-shadow-lg"
               >
-                Chrome Extension
+                {t('Chrome Extension')}
               </CardItem>
               <div className="mt-1 flex items-center text-gray-600">
                 {[1, 2, 3, 4, 5].map((item, index) => (
@@ -76,7 +78,7 @@ const InstallCard = () => {
                 )
               }}
             >
-              Install from Chrome Web Store
+              {t('Install from Chrome Web Store')}
             </Button>
           </CardItem>
         </CardBody>

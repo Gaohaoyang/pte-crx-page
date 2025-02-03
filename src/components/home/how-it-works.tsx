@@ -7,8 +7,10 @@ import { FaChrome } from 'react-icons/fa6'
 import { FaServer } from 'react-icons/fa'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
+import { useTranslation } from 'react-i18next'
 
 const HowItWorks = () => {
+  const { t } = useTranslation('home')
   const containerRef = useRef<HTMLDivElement>(null)
   const divUserRef = useRef<HTMLDivElement>(null)
   const divPtePageRef = useRef<HTMLDivElement>(null)
@@ -16,11 +18,11 @@ const HowItWorks = () => {
   const divExtensionRef = useRef<HTMLDivElement>(null)
   return (
     <div className="mt-20">
-      <h2 className="text-3xl font-bold">How It Works</h2>
+      <h2 className="text-3xl font-bold">{t('How It Works')}</h2>
       <p className="mt-2">
-        When you visit the PTE score page, the Chrome extension intercepts the
-        API response, adds some question types, and renders them in the page
-        panel.
+        {t(
+          'When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.',
+        )}
       </p>
       <div
         className="relative mx-auto flex w-[96%] items-center justify-center pt-20 text-gray-500 dark:text-gray-300 md:w-[80%] lg:w-[60%]"

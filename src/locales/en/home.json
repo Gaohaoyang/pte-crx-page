@@ -4,5 +4,10 @@
   "to open the console for a manual check.": "to open the console for a manual check.",
   "Simply open your PTE score webpage after installing, and you'll see a clear breakdown of your performance, including sub-scores, CLB levels (for PTE-core), IELTS equivalent scores, and more.": "Simply open your PTE score webpage after installing, and you'll see a clear breakdown of your performance, including sub-scores, CLB levels (for PTE-core), IELTS equivalent scores, and more.",
   "Explore this panel to better understand your strengths and areas for improvement! Wishing you great success!": "Explore this panel to better understand your strengths and areas for improvement! Wishing you great success!",
-  "Samples": "Samples"
+  "Chrome Extension": "Chrome Extension",
+  "PTE Sub-Scores Breakdown": "PTE Sub-Scores Breakdown",
+  "Install from Chrome Web Store": "Install from Chrome Web Store",
+  "Samples": "Samples",
+  "How It Works": "How It Works",
+  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel."
 }
