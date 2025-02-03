@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { HeroUIProvider } from "@heroui/react"
+import { HeroUIProvider } from '@heroui/react'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',

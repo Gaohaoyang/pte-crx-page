@@ -1,13 +1,14 @@
 import BlurIn from '@/components/ui/blur-in'
-
+import { useTranslation } from 'react-i18next'
 import React from 'react'
 
 const Intro = () => {
+  const { t } = useTranslation('home')
   return (
     <div className="w-full text-base lg:w-2/3 xl:w-2/3 2xl:w-2/3">
       <BlurIn
         duration={0.4}
-        word="Automatically show your PTE sub-scores and details."
+        word={t('Automatically show your PTE sub-scores and details.')}
         className="text-3xl font-bold"
       ></BlurIn>
       <BlurIn duration={0.4} delay={0.3} className="mt-2 text-2xl font-bold">

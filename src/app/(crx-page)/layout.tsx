@@ -1,27 +1,10 @@
-import React from 'react'
+'use client'
 import Navbar from '@/components/navbar'
-// import { FloatingNav } from '@/components/ui/floating-navbar'
+import initI18n, { getBrowserLanguage } from '@/locales/i18n'
+
+initI18n(getBrowserLanguage())
 
 const CrxLayout = ({ children }: { children: React.ReactNode }) => {
-  // const navItems = [
-  //   {
-  //     name: 'Home',
-  //     link: '/',
-  //     // icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  //   },
-  //   {
-  //     name: 'About',
-  //     link: '/about',
-  //     // icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  //   },
-  //   {
-  //     name: 'Contact',
-  //     link: '/contact',
-  //     // icon: (
-  //     //   <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-  //     // ),
-  //   },
-  // ]
   return (
     <div className="max-w-screen overflow-x-hidden">
       <Navbar />
