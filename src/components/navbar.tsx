@@ -1,18 +1,33 @@
 'use client'
 
-import React from 'react'
-import { LuSun, LuMoon } from 'react-icons/lu'
+import React, { useState } from 'react'
+import { LuSun, LuMoon, LuLanguages } from 'react-icons/lu'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
-import { Button } from "@heroui/react"
+import {
+  Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from '@heroui/react'
 import { FaGithub } from 'react-icons/fa6'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import GradualSpacing from '@/components/ui/gradual-spacing'
+import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
   const router = useRouter()
+  const { i18n } = useTranslation()
+  const [language, setLanguage] = useState(i18n.language || 'en')
+
+  const handleLanguageChange = (key: string) => {
+    setLanguage(key)
+    i18n.changeLanguage(key)
+  }
+
   return (
     <>
       <div className="fixed top-0 z-[1000] flex h-10 w-full items-center justify-center bg-white/80 shadow backdrop-blur-sm dark:bg-slate-700/80 dark:shadow-slate-300/30">
@@ -39,6 +54,24 @@ const Navbar = () => {
             </Button>
           </div>
           <div>
+            <Dropdown>
+              <DropdownTrigger>
+                <Button isIconOnly variant="light">
+                  <LuLanguages className="text-lg" />
+                  <span className="sr-only">Toggle language</span>
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                aria-label="Language Selection"
+                onAction={(key) => handleLanguageChange(key as string)}
+                selectedKeys={new Set([language])}
+                selectionMode="single"
+              >
+                <DropdownItem key="en">English</DropdownItem>
+                <DropdownItem key="zh">中文</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+
             <Button
               isIconOnly
               variant="light"
