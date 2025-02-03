@@ -23,7 +23,7 @@ const CrxLayout = ({ children }: { children: React.ReactNode }) => {
   //   },
   // ]
   return (
-    <div>
+    <div className="max-w-screen overflow-x-hidden">
       <Navbar />
       {children}
     </div>

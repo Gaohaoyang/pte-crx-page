@@ -59,7 +59,7 @@ const HowItWorks = () => {
           <div className="mt-14 flex justify-center">
             <div
               ref={divExtensionRef}
-              className="relative z-10 ml-10 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
+              className="relative z-10 ml-20 flex h-14 w-14 items-center justify-center rounded-full border bg-white p-3 shadow-md dark:bg-gray-600"
             >
               <Image
                 src={Logo}
@@ -111,11 +111,11 @@ const HowItWorks = () => {
           containerRef={containerRef}
           toRef={divExtensionRef}
           fromRef={divPtePageRef}
-          curvature={110}
-          startYOffset={15}
+          curvature={40}
+          startYOffset={25}
+          startXOffset={5}
           endYOffset={-25}
           delay={2}
-          reverse
         />
         <AnimatedBeam
           duration={5}
@@ -125,7 +125,8 @@ const HowItWorks = () => {
           curvature={0}
           startYOffset={10}
           endYOffset={10}
-          delay={2}
+          delay={2.5}
+          reverse
         />
         <AnimatedBeam
           duration={5}
@@ -135,7 +136,7 @@ const HowItWorks = () => {
           curvature={-20}
           startYOffset={5}
           endYOffset={5}
-          delay={2}
+          delay={3}
           reverse
         />
       </div>

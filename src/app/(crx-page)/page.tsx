@@ -21,7 +21,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <div className="text-3xl font-bold mt-10">Samples</div>
+          <div className="mt-10 text-3xl font-bold">Samples</div>
           <AnimatedTestimonials testimonials={bannerData} autoplay={true} />
         </motion.div>
         <HowItWorks />

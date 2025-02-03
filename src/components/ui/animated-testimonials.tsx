@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 import questionTypes from '@/lib/questionTypes'
-import { Tooltip } from "@heroui/react"
+import { Tooltip } from '@heroui/react'
 
 type Testimonial = {
   id: string
@@ -37,7 +37,7 @@ const TestimonialContent = ({ content }: { content: string }) => {
         }
         return word
       })
-      .join(' ');
+      .join(' ')
   }
 
   const renderContent = () => {
