@@ -3,17 +3,20 @@ import i18n from 'i18next'
 import homeEn from '@/locales/en/home.json'
 import homeZh from '@/locales/zh/home.json'
 
+const LANGUAGE_KEY = 'pte-crx-language'
+
 /**
- * Retrieves the language setting of the user's browser.
- *
- * @return {string} The language setting, either 'zh' for Chinese or 'en' for English.
+ * Get user's preferred language from localStorage or browser settings
  */
-export const getBrowserLanguage = () => {
-  /**
-   * language: zh-CN or en-CA
-   * @type {string}
-   */
-  const lang = navigator.languages ? navigator.languages[0] : navigator.language
+export const getPreferredLanguage = () => {
+  // Check localStorage first
+  const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem(LANGUAGE_KEY) : null
+  if (savedLanguage === 'en' || savedLanguage === 'zh') {
+    return savedLanguage
+  }
+
+  // If no saved language, detect from browser
+  const lang = typeof window !== 'undefined' && (navigator.languages ? navigator.languages[0] : navigator.language)
   if (lang) {
     if (
       lang.includes('zh-Hant') ||
@@ -24,11 +27,17 @@ export const getBrowserLanguage = () => {
       return 'en'
     } else if (lang.includes('zh')) {
       return 'zh'
-    } else {
-      return 'en'
     }
-  } else {
-    return 'en'
+  }
+  return 'en'
+}
+
+/**
+ * Save language preference to localStorage
+ */
+export const saveLanguagePreference = (language: string) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(LANGUAGE_KEY, language)
   }
 }
 

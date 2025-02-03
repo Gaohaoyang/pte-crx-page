@@ -1,8 +1,8 @@
 'use client'
 import Navbar from '@/components/navbar'
-import initI18n, { getBrowserLanguage } from '@/locales/i18n'
+import initI18n, { getPreferredLanguage } from '@/locales/i18n'
 
-initI18n(getBrowserLanguage())
+initI18n(getPreferredLanguage())
 
 const CrxLayout = ({ children }: { children: React.ReactNode }) => {
   return (

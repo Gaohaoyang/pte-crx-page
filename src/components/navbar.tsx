@@ -16,6 +16,7 @@ import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import GradualSpacing from '@/components/ui/gradual-spacing'
 import { useTranslation } from 'react-i18next'
+import { saveLanguagePreference } from '@/locales/i18n'
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
@@ -26,6 +27,7 @@ const Navbar = () => {
   const handleLanguageChange = (key: string) => {
     setLanguage(key)
     i18n.changeLanguage(key)
+    saveLanguagePreference(key)
   }
 
   return (
