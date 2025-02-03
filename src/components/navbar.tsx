@@ -54,7 +54,11 @@ const Navbar = () => {
             </Button>
           </div>
           <div>
-            <Dropdown>
+            <Dropdown
+              classNames={{
+                content: 'min-w-fit',
+              }}
+            >
               <DropdownTrigger>
                 <Button isIconOnly variant="light">
                   <LuLanguages className="text-lg" />
