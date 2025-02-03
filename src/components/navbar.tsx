@@ -16,13 +16,13 @@ import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import GradualSpacing from '@/components/ui/gradual-spacing'
 import { useTranslation } from 'react-i18next'
-import { saveLanguagePreference } from '@/locales/i18n'
+import { saveLanguagePreference, getPreferredLanguage } from '@/locales/i18n'
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
   const router = useRouter()
   const { i18n } = useTranslation()
-  const [language, setLanguage] = useState(i18n.language || 'en')
+  const [language, setLanguage] = useState(getPreferredLanguage())
 
   const handleLanguageChange = (key: string) => {
     setLanguage(key)
