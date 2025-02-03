@@ -1,4 +1,4 @@
-import { Button } from "@heroui/react"
+import { Button } from '@heroui/react'
 import { MdStar } from 'react-icons/md'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'

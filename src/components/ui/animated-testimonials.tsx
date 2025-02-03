@@ -6,11 +6,14 @@ import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 import questionTypes from '@/lib/questionTypes'
 import { Tooltip } from '@heroui/react'
+import { useTranslation } from 'react-i18next'
 
 type Testimonial = {
   id: string
   content: string
+  contentZh: string
   name: string
+  nameZh: string
   src: string | StaticImageData
 }
 
@@ -125,6 +128,7 @@ export const AnimatedTestimonials = ({
   testimonials: Testimonial[]
   autoplay?: boolean
 }) => {
+  const { i18n } = useTranslation()
   const [active, setActive] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
@@ -245,9 +249,17 @@ export const AnimatedTestimonials = ({
               <span className="mr-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
                 Sample {testimonials[active].id}
               </span>
-              {testimonials[active].name}{' '}
+              {i18n.language === 'zh'
+                ? testimonials[active].nameZh
+                : testimonials[active].name}
             </h3>
-            <TestimonialContent content={testimonials[active].content} />
+            <TestimonialContent
+              content={
+                i18n.language === 'zh'
+                  ? testimonials[active].contentZh
+                  : testimonials[active].content
+              }
+            />
           </motion.div>
           <div className="mb-4 flex gap-4">
             <button

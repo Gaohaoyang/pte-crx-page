@@ -6,8 +6,10 @@ import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
 import { bannerData } from '@/lib/data'
 import { motion } from 'motion/react'
 import HowItWorks from '@/components/home/how-it-works'
+import { useTranslation } from 'react-i18next'
 
 export default function Home() {
+  const { t } = useTranslation('home')
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="container p-4">
@@ -21,7 +23,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <div className="mt-10 text-3xl font-bold">Samples</div>
+          <div className="mt-10 text-3xl font-bold">{t('Samples')}</div>
           <AnimatedTestimonials testimonials={bannerData} autoplay={true} />
         </motion.div>
         <HowItWorks />

@@ -35,6 +35,7 @@ export const getPreferredLanguage = () => {
     return 'en'
   } catch (e) {
     // Return default language if running on server or if there's any error
+    console.error(e)
     return 'en'
   }
 }
@@ -46,6 +47,7 @@ export const saveLanguagePreference = (language: string) => {
   try {
     localStorage.setItem(LANGUAGE_KEY, language)
   } catch (e) {
+    console.error(e)
     // Ignore errors (e.g., when running on server)
   }
 }
