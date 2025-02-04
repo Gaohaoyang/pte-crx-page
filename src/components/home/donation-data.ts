@@ -1,4 +1,4 @@
-// This constant should be updated when the file is modified
+// This constant will be updated when the file is modified automatically
 export const LAST_UPDATED = '2025-02-04'
 
 const donationData = [
