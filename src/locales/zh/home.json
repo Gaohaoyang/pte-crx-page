@@ -9,5 +9,5 @@
   "Install from Chrome Web Store": "从 Chrome Web Store 安装",
   "Samples": "示例",
   "How It Works": "工作原理",
-  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "当您访问 PTE 成绩页面时，Chrome 插件会拦截 API 响应，添加一些题目类型，并在页面面板中渲染。"
+  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "当您访问 PTE 成绩页面时，Chrome 插件会拦截 API 响应，添加一些题目类型，并在页面面板中渲染。这个拦截仅在客户端执行，不会被上传到任何服务器。"
 }

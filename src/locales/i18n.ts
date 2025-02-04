@@ -5,11 +5,17 @@ import homeZh from '@/locales/zh/home.json'
 
 const LANGUAGE_KEY = 'language'
 
+const isBrowser = typeof window !== 'undefined'
+
 /**
  * Get user's preferred language from localStorage or browser settings
  */
 export const getPreferredLanguage = () => {
   try {
+    if (!isBrowser) {
+      return 'en' // Default to English on server-side
+    }
+
     // Check localStorage first
     const savedLanguage = localStorage.getItem(LANGUAGE_KEY)
     if (savedLanguage === 'en' || savedLanguage === 'zh') {
@@ -44,6 +50,8 @@ export const getPreferredLanguage = () => {
  * Save language preference to localStorage
  */
 export const saveLanguagePreference = (language: string) => {
+  if (!isBrowser) return // Don't attempt to save on server-side
+
   try {
     localStorage.setItem(LANGUAGE_KEY, language)
   } catch (e) {
