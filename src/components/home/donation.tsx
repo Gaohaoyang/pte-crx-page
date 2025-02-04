@@ -52,15 +52,9 @@ const Donation = () => {
         </TableBody>
       </Table>
       <p className="mt-4">You can support me through the following methods.</p>
-      <div className="mt-4 flex flex-wrap justify-between gap-4">
+      <div className="mt-4 flex flex-wrap gap-4">
         {DonationMethods.map((method) => (
-          <Card
-            className={clsx(
-              'pb-2',
-              method.width ? `w-[${method.width}px]` : 'flex-1',
-            )}
-            key={method.name}
-          >
+          <Card className="w-full pb-2 sm:w-auto" key={method.name}>
             <CardHeader className="flex-col items-center px-4 pb-0">
               <div className="flex items-center gap-1">
                 {method.logo && (
