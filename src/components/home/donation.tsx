@@ -8,8 +8,13 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  Card,
+  CardHeader,
+  CardBody,
+  Image,
 } from '@heroui/react'
 import donationData, { LAST_UPDATED } from './donation-data'
+import DonationMethods from './donation-methods'
 
 const Donation = () => {
   return (
@@ -45,7 +50,31 @@ const Donation = () => {
           ))}
         </TableBody>
       </Table>
-      <p>You can support me through the following methods.</p>
+      <p className="mt-4">You can support me through the following methods.</p>
+      <div className="mt-4 flex flex-wrap justify-between gap-4">
+        {DonationMethods.map((method) => (
+          <Card className="pb-2" key={method.name}>
+            <CardHeader className="flex-col items-center px-4 pb-0">
+              <h4 className="text-large font-bold">
+                {method.name
+                  .split(/<i>|<\/i>/)
+                  .map((part, index) =>
+                    index % 2 === 1 ? <i key={index}>{part}</i> : part,
+                  )}
+              </h4>
+              <p className="">{method.description}</p>
+            </CardHeader>
+            <CardBody className="flex flex-col items-center overflow-visible py-2">
+              <Image
+                alt={method.name}
+                className="rounded-none object-cover"
+                src={method.pic}
+                width={method.picWidth}
+              />
+            </CardBody>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }
