@@ -13,29 +13,33 @@ import {
   CardBody,
   Image,
 } from '@heroui/react'
-import clsx from 'clsx'
 import donationData, { LAST_UPDATED } from './donation-data'
 import DonationMethods from './donation-methods'
+import { useTranslation } from 'react-i18next'
 
 const Donation = () => {
+  const { t } = useTranslation('home')
   return (
     <div className="mt-20">
-      <h2 className="mb-6 text-3xl font-bold">Donation</h2>
+      <h2 className="mb-6 text-3xl font-bold">{t('Donation')}</h2>
       <p>
-        If you found this helpful, feel free to sponsor me for a cup of coffee!
-        ☕ :) I really appreciate it.
+        {t(
+          'If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.',
+        )}
       </p>
-      <p>Have a great day! Your name will appear on the donation list. ❤️</p>
+      <p>
+        {t('Have a great day! Your name will appear on the donation list. ❤️')}
+      </p>
       <p className="mb-2 mr-2 mt-2 text-right text-sm text-gray-500 dark:text-gray-300">
-        Last updated: {LAST_UPDATED}
+        {t('Last updated:')} {LAST_UPDATED}
       </p>
       <Table isStriped aria-label="Donation table" className="w-full">
         <TableHeader>
-          <TableColumn>NAME</TableColumn>
-          <TableColumn>DATE</TableColumn>
-          <TableColumn>AMOUNT</TableColumn>
-          <TableColumn>METHOD</TableColumn>
-          <TableColumn>MESSAGE</TableColumn>
+          <TableColumn>{t('Name')}</TableColumn>
+          <TableColumn>{t('Date')}</TableColumn>
+          <TableColumn>{t('Amount')}</TableColumn>
+          <TableColumn>{t('Method')}</TableColumn>
+          <TableColumn>{t('Message')}</TableColumn>
         </TableHeader>
         <TableBody>
           {donationData.map((donation, index) => (
@@ -51,7 +55,9 @@ const Donation = () => {
           ))}
         </TableBody>
       </Table>
-      <p className="mt-4">You can support me through the following methods.</p>
+      <p className="mt-4">
+        {t('You can support me through the following methods.')}
+      </p>
       <div className="mt-4 flex flex-wrap gap-4">
         {DonationMethods.map((method) => (
           <Card className="w-full pb-2 sm:w-auto" key={method.name}>

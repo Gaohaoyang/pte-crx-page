@@ -9,5 +9,16 @@
   "Install from Chrome Web Store": "Install from Chrome Web Store",
   "Samples": "Samples",
   "How It Works": "How It Works",
-  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel. This intercept is only executed on the client side, and will not be uploaded to any server."
+  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel. This intercept is only executed on the client side, and will not be uploaded to any server.",
+  "Donation": "Donation",
+  "If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.": "If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.",
+  "Have a great day! Your name will appear on the donation list. ❤️": "Have a great day! Your name will appear on the donation list. ❤️",
+  "Last updated:": "Last updated:",
+  "You can support me through the following methods.": "You can support me through the following methods.",
+  "Donation table": "Donation table",
+  "Name": "Name",
+  "Date": "Date",
+  "Amount": "Amount",
+  "Method": "Method",
+  "Message": "Message"
 }

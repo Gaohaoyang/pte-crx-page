@@ -9,5 +9,16 @@
   "Install from Chrome Web Store": "从 Chrome Web Store 安装",
   "Samples": "示例",
   "How It Works": "工作原理",
-  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "当您访问 PTE 成绩页面时，Chrome 插件会拦截 API 响应，添加一些题目类型，并在页面面板中渲染。这个拦截仅在客户端执行，不会被上传到任何服务器。"
+  "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "当您访问 PTE 成绩页面时，Chrome 插件会拦截 API 响应，添加一些题目类型，并在页面面板中渲染。这个拦截仅在客户端执行，不会被上传到任何服务器。",
+  "Donation": "捐赠",
+  "If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.": "如果您觉得这个工具对您有帮助，欢迎赞助我一杯咖啡！☕ :) 我非常感激。",
+  "Have a great day! Your name will appear on the donation list. ❤️": "祝您有个美好的一天！您的名字将出现在捐赠列表中。❤️",
+  "Last updated:": "最后更新：",
+  "You can support me through the following methods.": "您可以通过以下方式支持我：",
+  "Donation table": "捐赠列表",
+  "Name": "姓名",
+  "Date": "日期",
+  "Amount": "金额",
+  "Method": "方式",
+  "Message": "留言"
 }
