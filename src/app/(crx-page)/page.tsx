@@ -8,6 +8,7 @@ import { motion } from 'motion/react'
 import HowItWorks from '@/components/home/how-it-works'
 import { useTranslation } from 'react-i18next'
 import Donation from '@/components/home/donation'
+import { DiscussionEmbed } from 'disqus-react'
 
 export default function Home() {
   const { t } = useTranslation('home')
@@ -29,13 +30,17 @@ export default function Home() {
         </motion.div>
         <HowItWorks />
         <Donation />
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
-        <div className="mt-20 h-96">hi</div>
+        <div className="h-40" />
+        <DiscussionEmbed
+          shortname="gaohaoyang-github-io-pte-crx-page"
+          config={{
+            url: 'https://gaohaoyang.github.io/pte-crx-page',
+            identifier: 'gaohaoyang.github.io_pte-crx-page',
+            title:
+              'PTE Sub-Scores Breakdown | Analyze Your PTE Sub-Scores Online with PTE Sub-Scores Breakdown Chrome Extension | 分析 PTE Core 小分的 Chrome 插件',
+            language: 'en_US',
+          }}
+        />
       </div>
     </div>
   )
