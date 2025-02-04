@@ -7,6 +7,7 @@ import { bannerData } from '@/lib/data'
 import { motion } from 'motion/react'
 import HowItWorks from '@/components/home/how-it-works'
 import { useTranslation } from 'react-i18next'
+import Donation from '@/components/home/donation'
 
 export default function Home() {
   const { t } = useTranslation('home')
@@ -27,7 +28,7 @@ export default function Home() {
           <AnimatedTestimonials testimonials={bannerData} autoplay={true} />
         </motion.div>
         <HowItWorks />
-
+        <Donation />
         <div className="mt-20 h-96">hi</div>
         <div className="mt-20 h-96">hi</div>
         <div className="mt-20 h-96">hi</div>
