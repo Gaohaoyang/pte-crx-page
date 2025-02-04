@@ -9,7 +9,7 @@ import {
   TableRow,
   TableCell,
 } from '@heroui/react'
-import donationData from './donation-data'
+import donationData, { LAST_UPDATED } from './donation-data'
 
 const Donation = () => {
   return (
@@ -21,7 +21,7 @@ const Donation = () => {
       </p>
       <p>Have a great day! Your name will appear on the donation list. ❤️</p>
       <p className="mb-2 mr-2 mt-2 text-right text-sm text-gray-500 dark:text-gray-300">
-        Last updated: 2025-01-29
+        Last updated: {LAST_UPDATED}
       </p>
       <Table isStriped aria-label="Donation table" className="w-full">
         <TableHeader>

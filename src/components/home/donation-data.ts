@@ -1,3 +1,6 @@
+// This constant should be updated when the file is modified
+export const LAST_UPDATED = '2025-02-04'
+
 const donationData = [
   {
     name: '**宁',
