@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import InstallCard from "@/components/home/install-card";
-import Intro from "@/components/home/intro";
+import InstallCard from '@/components/home/install-card'
+import Intro from '@/components/home/intro'
 
-import HowItWorks from "@/components/home/how-it-works";
+import HowItWorks from '@/components/home/how-it-works'
 
-import Donation from "@/components/home/donation";
-import Comments from "@/components/home/comments";
-import Samples from "@/components/home/samples";
+import Donation from '@/components/home/donation'
+import Comments from '@/components/home/comments'
+import Samples from '@/components/home/samples'
 
 export default function Home() {
   return (
@@ -24,5 +24,5 @@ export default function Home() {
         <Comments />
       </div>
     </div>
-  );
+  )
 }
