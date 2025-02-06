@@ -102,7 +102,7 @@ const Donation = () => {
                 ease: 'easeOut',
               }}
             >
-              <Card className="w-full pb-2 sm:w-auto">
+              <Card className="h-full w-full pb-2 sm:w-auto">
                 <CardHeader className="flex-col items-center px-4 pb-0">
                   <div className="flex items-center gap-1">
                     {method.logo && (

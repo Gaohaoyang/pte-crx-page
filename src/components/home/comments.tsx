@@ -6,7 +6,7 @@ const Comments = () => {
   const { theme } = useTheme()
   const { i18n } = useTranslation('home')
   return (
-    <div className="disqus-container rounded-lg">
+    <div className="disqus-container mt-40 rounded-lg">
       <DiscussionEmbed
         key={`${theme}_${i18n.language}`}
         shortname="gaohaoyang-github-io-pte-crx-page"

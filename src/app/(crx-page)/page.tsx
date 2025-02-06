@@ -21,7 +21,6 @@ export default function Home() {
         <Samples />
         <HowItWorks />
         <Donation />
-        <div className="h-40" />
         <Comments />
       </div>
     </div>
