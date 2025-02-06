@@ -18,13 +18,15 @@ import DonationMethods from './donation-methods'
 import { useTranslation } from 'react-i18next'
 import { motion, useInView } from 'motion/react'
 import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { prefix } from '@/lib/utils'
 
 const Donation = () => {
   const { t } = useTranslation('home')
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   useEffect(() => {
     if (searchParams.get('scrollTo') === 'donation') {
@@ -39,9 +41,14 @@ const Donation = () => {
           top: offsetPosition,
           behavior: 'smooth',
         })
+
+        // 滚动完成后移除 URL 参数
+        setTimeout(() => {
+          history.replaceState({}, '', `${prefix}/`)
+        }, 1000) // 给滚动动画一秒钟的时间
       }, 240)
     }
-  }, [searchParams])
+  }, [searchParams, router])
 
   return (
     <div ref={ref} id="donation" className="mt-20">
