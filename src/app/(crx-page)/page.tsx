@@ -8,29 +8,9 @@ import HowItWorks from '@/components/home/how-it-works'
 import Donation from '@/components/home/donation'
 import Comments from '@/components/home/comments'
 import Samples from '@/components/home/samples'
-import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
 export default function Home() {
-  const searchParams = useSearchParams()
-
-  useEffect(() => {
-    if (searchParams.get('scrollTo') === 'donation') {
-      setTimeout(() => {
-        const element = document.querySelector<HTMLDivElement>('#donation')
-        if (!element) return
-        const headerOffset = 80 // 预留导航栏的高度
-        const elementPosition = element.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.scrollY - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        })
-      }, 240)
-    }
-  }, [searchParams])
-
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="container p-4">
@@ -41,7 +21,9 @@ export default function Home() {
         </div>
         <Samples />
         <HowItWorks />
-        <Donation />
+        <Suspense>
+          <Donation />
+        </Suspense>
         <Comments />
       </div>
     </div>

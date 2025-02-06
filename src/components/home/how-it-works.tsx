@@ -1,43 +1,43 @@
-"use client";
+'use client'
 
-import { useRef } from "react";
-import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { LuUser } from "react-icons/lu";
-import { FaChrome } from "react-icons/fa6";
-import { FaServer } from "react-icons/fa";
-import Image from "next/image";
-import Logo from "@/assets/home/logo.svg";
-import { useTranslation } from "react-i18next";
-import { motion, useInView } from "motion/react";
+import { useRef } from 'react'
+import { AnimatedBeam } from '@/components/ui/animated-beam'
+import { LuUser } from 'react-icons/lu'
+import { FaChrome } from 'react-icons/fa6'
+import { FaServer } from 'react-icons/fa'
+import Image from 'next/image'
+import Logo from '@/assets/home/logo.svg'
+import { useTranslation } from 'react-i18next'
+import { motion, useInView } from 'motion/react'
 
 const HowItWorks = () => {
-  const { t } = useTranslation("home");
-  const containerRef = useRef<HTMLDivElement>(null);
-  const divUserRef = useRef<HTMLDivElement>(null);
-  const divPtePageRef = useRef<HTMLDivElement>(null);
-  const divPteServerRef = useRef<HTMLDivElement>(null);
-  const divExtensionRef = useRef<HTMLDivElement>(null);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { t } = useTranslation('home')
+  const containerRef = useRef<HTMLDivElement>(null)
+  const divUserRef = useRef<HTMLDivElement>(null)
+  const divPtePageRef = useRef<HTMLDivElement>(null)
+  const divPteServerRef = useRef<HTMLDivElement>(null)
+  const divExtensionRef = useRef<HTMLDivElement>(null)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
     <div ref={ref} className="mt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <h2 className="text-3xl font-bold">{t("How It Works")}</h2>
+        <h2 className="text-3xl font-bold">{t('How It Works')}</h2>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
       >
         <p className="mt-2">
           {t(
-            "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.",
+            'When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.'
           )}
         </p>
       </motion.div>
@@ -45,7 +45,7 @@ const HowItWorks = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
         className="relative mx-auto flex w-[96%] items-center justify-center pt-20 text-gray-500 dark:text-gray-300 md:w-[80%] lg:w-[60%]"
         ref={containerRef}
       >
@@ -164,7 +164,7 @@ const HowItWorks = () => {
         />
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default HowItWorks;
+export default HowItWorks

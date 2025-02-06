@@ -17,11 +17,31 @@ import donationData, { LAST_UPDATED } from './donation-data'
 import DonationMethods from './donation-methods'
 import { useTranslation } from 'react-i18next'
 import { motion, useInView } from 'motion/react'
+import { useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 const Donation = () => {
   const { t } = useTranslation('home')
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    if (searchParams.get('scrollTo') === 'donation') {
+      setTimeout(() => {
+        const element = document.querySelector<HTMLDivElement>('#donation')
+        if (!element) return
+        const headerOffset = 80 // 预留导航栏的高度
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }, 240)
+    }
+  }, [searchParams])
 
   return (
     <div ref={ref} id="donation" className="mt-20">

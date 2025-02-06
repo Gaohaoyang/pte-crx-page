@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Timeline } from "@/components/ui/timeline";
+import Image from 'next/image'
+import { Timeline } from '@/components/ui/timeline'
 
 const ChangeLog = () => {
   const data = [
     {
-      title: "2024",
+      title: '2024',
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
@@ -44,7 +44,7 @@ const ChangeLog = () => {
       ),
     },
     {
-      title: "Early 2023",
+      title: 'Early 2023',
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
@@ -89,7 +89,7 @@ const ChangeLog = () => {
       ),
     },
     {
-      title: "2024.8.20",
+      title: '2024.8.20',
       content: (
         <div>
           <p className="mb-4 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
@@ -145,12 +145,12 @@ const ChangeLog = () => {
         </div>
       ),
     },
-  ];
+  ]
   return (
     <div>
       <Timeline data={data} />
     </div>
-  );
-};
+  )
+}
 
-export default ChangeLog;
+export default ChangeLog
