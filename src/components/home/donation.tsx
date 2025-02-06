@@ -24,7 +24,7 @@ const Donation = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div ref={ref} className="mt-20">
+    <div ref={ref} id="donation" className="mt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
