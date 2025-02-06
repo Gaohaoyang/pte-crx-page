@@ -36,7 +36,14 @@ const Header = () => {
   }
 
   return (
-    <Navbar maxWidth="xl">
+    <Navbar
+      maxWidth="2xl"
+      classNames={
+        {
+          // wrapper: 'container xl:max-w-[1280px] 2xl:max-w-[1300px]',
+        }
+      }
+    >
       <NavbarContent className="" justify="start">
         <NavbarBrand>
           <Link href="/">
