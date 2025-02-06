@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { LuSun, LuMoon, LuLanguages } from 'react-icons/lu'
 import { useTheme } from 'next-themes'
-import { useRouter } from 'next/navigation'
 import {
   Button,
   Dropdown,
@@ -27,7 +26,6 @@ import { saveLanguagePreference, getPreferredLanguage } from '@/locales/i18n'
 
 const Header = () => {
   const { theme, setTheme } = useTheme()
-  const router = useRouter()
   const { i18n } = useTranslation()
   const [language, setLanguage] = useState(getPreferredLanguage())
 
@@ -185,7 +183,6 @@ const Header = () => {
       </NavbarMenu>
     </Navbar>
   )
-
 }
 
 export default Header
