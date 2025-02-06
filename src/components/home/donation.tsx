@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useRef } from 'react'
+import React, { useRef } from "react";
 import {
   Table,
   TableHeader,
@@ -12,59 +12,59 @@ import {
   CardHeader,
   CardBody,
   Image,
-} from '@heroui/react'
-import donationData, { LAST_UPDATED } from './donation-data'
-import DonationMethods from './donation-methods'
-import { useTranslation } from 'react-i18next'
-import { motion, useInView } from 'motion/react'
+} from "@heroui/react";
+import donationData, { LAST_UPDATED } from "./donation-data";
+import DonationMethods from "./donation-methods";
+import { useTranslation } from "react-i18next";
+import { motion, useInView } from "motion/react";
 
 const Donation = () => {
-  const { t } = useTranslation('home')
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const { t } = useTranslation("home");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <div ref={ref} className="mt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <h2 className="mb-6 text-3xl font-bold">{t('Donation')}</h2>
+        <h2 className="mb-6 text-3xl font-bold">{t("Donation")}</h2>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
       >
         <p>
           {t(
-            'If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.',
+            "If you found this helpful, feel free to sponsor me for a cup of coffee! ☕ :) I really appreciate it.",
           )}
         </p>
         <p>
           {t(
-            'Have a great day! Your name will appear on the donation list. ❤️',
+            "Have a great day! Your name will appear on the donation list. ❤️",
           )}
         </p>
         <p className="mb-2 mr-2 mt-2 text-right text-sm text-gray-500 dark:text-gray-300">
-          {t('Last updated:')} {LAST_UPDATED}
+          {t("Last updated:")} {LAST_UPDATED}
         </p>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
       >
         <Table isStriped aria-label="Donation table" className="w-full">
           <TableHeader>
-            <TableColumn>{t('Name')}</TableColumn>
-            <TableColumn>{t('Date')}</TableColumn>
-            <TableColumn>{t('Amount')}</TableColumn>
-            <TableColumn>{t('Method')}</TableColumn>
-            <TableColumn>{t('Message')}</TableColumn>
+            <TableColumn>{t("Name")}</TableColumn>
+            <TableColumn>{t("Date")}</TableColumn>
+            <TableColumn>{t("Amount")}</TableColumn>
+            <TableColumn>{t("Method")}</TableColumn>
+            <TableColumn>{t("Message")}</TableColumn>
           </TableHeader>
           <TableBody>
             {donationData.map((donation, index) => (
@@ -75,7 +75,7 @@ const Donation = () => {
                 <TableCell>
                   <div dangerouslySetInnerHTML={{ __html: donation.method }} />
                 </TableCell>
-                <TableCell>{donation.message || '-'}</TableCell>
+                <TableCell>{donation.message || "-"}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -85,10 +85,10 @@ const Donation = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
       >
         <p className="mt-4">
-          {t('You can support me through the following methods.')}
+          {t("You can support me through the following methods.")}
         </p>
         <div className="mt-4 flex flex-wrap gap-4">
           {DonationMethods.map((method, index) => (
@@ -99,7 +99,7 @@ const Donation = () => {
               transition={{
                 duration: 0.5,
                 delay: 0.8 + index * 0.1,
-                ease: 'easeOut',
+                ease: "easeOut",
               }}
             >
               <Card className="h-full w-full pb-2 sm:w-auto">
@@ -147,7 +147,7 @@ const Donation = () => {
         </div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default Donation
+export default Donation;

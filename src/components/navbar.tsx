@@ -1,34 +1,34 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import { LuSun, LuMoon, LuLanguages } from 'react-icons/lu'
-import { useTheme } from 'next-themes'
-import { useRouter } from 'next/navigation'
+import React, { useState } from "react";
+import { LuSun, LuMoon, LuLanguages } from "react-icons/lu";
+import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 import {
   Button,
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from '@heroui/react'
-import { FaGithub } from 'react-icons/fa6'
-import Image from 'next/image'
-import Logo from '@/assets/home/logo.svg'
-import GradualSpacing from '@/components/ui/gradual-spacing'
-import { useTranslation } from 'react-i18next'
-import { saveLanguagePreference, getPreferredLanguage } from '@/locales/i18n'
+} from "@heroui/react";
+import { FaGithub } from "react-icons/fa6";
+import Image from "next/image";
+import Logo from "@/assets/home/logo.svg";
+import GradualSpacing from "@/components/ui/gradual-spacing";
+import { useTranslation } from "react-i18next";
+import { saveLanguagePreference, getPreferredLanguage } from "@/locales/i18n";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme()
-  const router = useRouter()
-  const { i18n } = useTranslation()
-  const [language, setLanguage] = useState(getPreferredLanguage())
+  const { theme, setTheme } = useTheme();
+  const router = useRouter();
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState(getPreferredLanguage());
 
   const handleLanguageChange = (key: string) => {
-    setLanguage(key)
-    i18n.changeLanguage(key)
-    saveLanguagePreference(key)
-  }
+    setLanguage(key);
+    i18n.changeLanguage(key);
+    saveLanguagePreference(key);
+  };
 
   return (
     <>
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Button
               className="flex items-center gap-2 font-semibold outline-none"
               variant="light"
-              onPress={() => router.push('/')}
+              onPress={() => router.push("/")}
             >
               <Image
                 src={Logo}
@@ -58,7 +58,7 @@ const Navbar = () => {
           <div>
             <Dropdown
               classNames={{
-                content: 'min-w-fit',
+                content: "min-w-fit",
               }}
             >
               <DropdownTrigger>
@@ -81,7 +81,7 @@ const Navbar = () => {
             <Button
               isIconOnly
               variant="light"
-              onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
               <LuSun className="text-lg opacity-0 transition-opacity dark:opacity-100" />
               <LuMoon className="absolute text-lg opacity-100 transition-opacity dark:opacity-0" />
@@ -92,9 +92,9 @@ const Navbar = () => {
               variant="light"
               onPress={() =>
                 window.open(
-                  'https://github.com/Gaohaoyang/pte-crx',
-                  '_blank',
-                  'noopener,noreferrer',
+                  "https://github.com/Gaohaoyang/pte-crx",
+                  "_blank",
+                  "noopener,noreferrer",
                 )
               }
             >
@@ -106,7 +106,7 @@ const Navbar = () => {
       </div>
       <div className="h-10"></div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

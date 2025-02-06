@@ -1,16 +1,16 @@
-import { Button } from '@heroui/react'
-import { MdStar } from 'react-icons/md'
-import Image from 'next/image'
-import Logo from '@/assets/home/logo.svg'
-import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
-import { motion, useInView } from 'motion/react'
-import { useTranslation } from 'react-i18next'
-import { useRef } from 'react'
+import { Button } from "@heroui/react";
+import { MdStar } from "react-icons/md";
+import Image from "next/image";
+import Logo from "@/assets/home/logo.svg";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { motion, useInView } from "motion/react";
+import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 const InstallCard = () => {
-  const { t } = useTranslation('home')
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const { t } = useTranslation("home");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <motion.div
       ref={ref}
@@ -20,7 +20,7 @@ const InstallCard = () => {
       transition={{
         delay: 1,
         duration: 0.6,
-        type: 'spring',
+        type: "spring",
         bounce: 0.2,
       }}
     >
@@ -42,14 +42,14 @@ const InstallCard = () => {
                 translateX={5}
                 className="text-lg font-semibold drop-shadow-lg md:text-lg xl:text-xl"
               >
-                {t('PTE Sub-Scores Breakdown')}
+                {t("PTE Sub-Scores Breakdown")}
               </CardItem>
               <CardItem
                 translateZ={80}
                 translateX={5}
                 className="drop-shadow-lg"
               >
-                {t('Chrome Extension')}
+                {t("Chrome Extension")}
               </CardItem>
               <div className="mt-1 flex items-center text-gray-600">
                 {[1, 2, 3, 4, 5].map((item, index) => (
@@ -75,18 +75,18 @@ const InstallCard = () => {
               className="mt-4 w-11/12 rounded-full font-semibold shadow-lg"
               onPress={() => {
                 window.open(
-                  'https://chromewebstore.google.com/detail/pte-sub-scores-breakdown/hibclclepijigjnfdkmkfhjogfhgicda',
-                  '_blank',
-                )
+                  "https://chromewebstore.google.com/detail/pte-sub-scores-breakdown/hibclclepijigjnfdkmkfhjogfhgicda",
+                  "_blank",
+                );
               }}
             >
-              {t('Install from Chrome Web Store')}
+              {t("Install from Chrome Web Store")}
             </Button>
           </CardItem>
         </CardBody>
       </CardContainer>
     </motion.div>
-  )
-}
+  );
+};
 
-export default InstallCard
+export default InstallCard;
