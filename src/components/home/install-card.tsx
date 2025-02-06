@@ -3,23 +3,25 @@ import { MdStar } from 'react-icons/md'
 import Image from 'next/image'
 import Logo from '@/assets/home/logo.svg'
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
-import { motion } from 'motion/react'
+import { motion, useInView } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { useRef } from 'react'
 
 const InstallCard = () => {
   const { t } = useTranslation('home')
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
   return (
     <motion.div
+      ref={ref}
       className="flex flex-1"
       initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
       transition={{
-        delay: 1.2,
+        delay: 1,
         duration: 0.6,
         type: 'spring',
         bounce: 0.2,
-        // duration: 0.8,
-        // ease: 'easeInOut',
       }}
     >
       <CardContainer containerClassName="flex flex-1" className="inter-var">
