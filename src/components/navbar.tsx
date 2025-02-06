@@ -17,7 +17,6 @@ import {
   NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem,
 } from '@heroui/react'
 import { FaGithub } from 'react-icons/fa6'
 import Image from 'next/image'
@@ -118,56 +117,60 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarMenu className="bg-white/40 dark:bg-slate-700/40">
-        <NavbarMenuItem>
-          <div className="flex items-center gap-2">
-            <LuLanguages className="text-lg" /> Language
-          </div>
-          <NavbarMenuItem className="ml-8">
-            <Button
-              variant="light"
-              onPress={() => handleLanguageChange('en')}
-              className="justify-start"
-            >
-              English
-            </Button>
-          </NavbarMenuItem>
-          <NavbarMenuItem className="ml-8">
-            <Button
-              variant="light"
-              onPress={() => handleLanguageChange('zh')}
-              className="justify-start"
-            >
-              中文
-            </Button>
-          </NavbarMenuItem>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="">
-          <div className="flex items-center gap-2">
-            <LuSun className="text-lg" /> Theme
-          </div>
-          <NavbarMenuItem className="ml-8">
-            <Button
-              variant="light"
-              onPress={() => setTheme('light')}
-              className="justify-start"
-            >
-              <LuSun className="text-lg transition-opacity" />
-              light
-            </Button>
-          </NavbarMenuItem>
-          <NavbarMenuItem className="ml-8">
-            <Button
-              variant="light"
-              onPress={() => setTheme('dark')}
-              className="justify-start"
-            >
-              <LuMoon className="text-lg transition-opacity" />
-              dark
-            </Button>
-          </NavbarMenuItem>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="">
-          <div className="">
+        <ul>
+          <li>
+            <div className="flex items-center gap-2">
+              <LuLanguages className="text-lg" /> Language
+            </div>
+            <ul className="ml-8">
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => handleLanguageChange('en')}
+                  className="justify-start"
+                >
+                  English
+                </Button>
+              </li>
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => handleLanguageChange('zh')}
+                  className="justify-start"
+                >
+                  中文
+                </Button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div className="flex items-center gap-2">
+              <LuSun className="text-lg" /> Theme
+            </div>
+            <ul className="ml-8">
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => setTheme('light')}
+                  className="justify-start"
+                >
+                  <LuSun className="text-lg transition-opacity" />
+                  light
+                </Button>
+              </li>
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => setTheme('dark')}
+                  className="justify-start"
+                >
+                  <LuMoon className="text-lg transition-opacity" />
+                  dark
+                </Button>
+              </li>
+            </ul>
+          </li>
+          <li>
             <Link
               href="https://github.com/Gaohaoyang/pte-crx"
               target="_blank"
@@ -177,8 +180,8 @@ const Header = () => {
               <FaGithub className="text-large" />
               Github
             </Link>
-          </div>
-        </NavbarMenuItem>
+          </li>
+        </ul>
       </NavbarMenu>
     </Navbar>
   )
