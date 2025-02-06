@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm run update-donation-date
+git add src/components/home/donation-data.ts
