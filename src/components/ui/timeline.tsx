@@ -1,31 +1,31 @@
-"use client";
-import { useScroll, useTransform, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+'use client'
+import { useScroll, useTransform, motion } from 'motion/react'
+import React, { useEffect, useRef, useState } from 'react'
 
 interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
+  title: string
+  content: React.ReactNode
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
+  const ref = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState(0)
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      const rect = ref.current.getBoundingClientRect()
+      setHeight(rect.height)
     }
-  }, [ref]);
+  }, [ref])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
-  });
+    offset: ['start 10%', 'end 50%'],
+  })
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height])
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
   return (
     <div
@@ -61,13 +61,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-500 md:hidden">
                 {item.title}
               </h3>
-              {item.content}{" "}
+              {item.content}{' '}
             </div>
           </div>
         ))}
         <div
           style={{
-            height: height + "px",
+            height: height + 'px',
           }}
           className="absolute left-8 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] dark:via-neutral-700 md:left-8"
         >
@@ -81,5 +81,5 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
