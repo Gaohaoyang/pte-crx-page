@@ -1,53 +1,53 @@
-"use client";
+'use client'
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
-import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
-import questionTypes from "@/lib/questionTypes";
-import { Tooltip } from "@heroui/react";
-import { useTranslation } from "react-i18next";
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
+import { motion, AnimatePresence } from 'motion/react'
+import Image, { StaticImageData } from 'next/image'
+import { useEffect, useState } from 'react'
+import questionTypes from '@/lib/questionTypes'
+import { Tooltip } from '@heroui/react'
+import { useTranslation } from 'react-i18next'
 
 type Testimonial = {
-  id: string;
-  content: string;
-  contentZh: string;
-  name: string;
-  nameZh: string;
-  src: string | StaticImageData;
-};
+  id: string
+  content: string
+  contentZh: string
+  name: string
+  nameZh: string
+  src: string | StaticImageData
+}
 
 const TestimonialContent = ({ content }: { content: string }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
   const processContent = (text: string) => {
-    const words = text.split(/\s+/);
+    const words = text.split(/\s+/)
     return words
       .map((word) => {
-        const cleanWord = word.replace(/[.,!?()]/g, "").trim();
+        const cleanWord = word.replace(/[.,!?()]/g, '').trim()
         if (
           cleanWord in questionTypes &&
           typeof questionTypes[cleanWord as keyof typeof questionTypes] ===
-            "string"
+            'string'
         ) {
           return `<span class="question-type" data-type="${cleanWord}" data-full="${
             questionTypes[cleanWord as keyof typeof questionTypes]
-          }">${word}</span>`;
+          }">${word}</span>`
         }
-        return word;
+        return word
       })
-      .join(" ");
-  };
+      .join(' ')
+  }
 
   const renderContent = () => {
     const processedContent = content
-      .split("\n")
+      .split('\n')
       .map((text) => `<p class="mb-2">${processContent(text)}</p>`)
-      .join("");
+      .join('')
 
     if (!isMounted) {
       return (
@@ -57,44 +57,44 @@ const TestimonialContent = ({ content }: { content: string }) => {
             __html: processedContent,
           }}
         />
-      );
+      )
     }
 
     return (
       <motion.div className="mt-8 text-gray-600 dark:text-neutral-300">
         <motion.div
           initial={{
-            filter: "blur(10px)",
+            filter: 'blur(10px)',
             opacity: 0,
             y: 5,
           }}
           animate={{
-            filter: "blur(0px)",
+            filter: 'blur(0px)',
             opacity: 1,
             y: 0,
           }}
           transition={{
             duration: 0.2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         >
-          {content.split("\n").map((text, index) => {
-            const processedHtml = processContent(text);
-            const container = document.createElement("div");
-            container.innerHTML = processedHtml;
+          {content.split('\n').map((text, index) => {
+            const processedHtml = processContent(text)
+            const container = document.createElement('div')
+            container.innerHTML = processedHtml
 
             return (
               <div key={index} className="mb-2">
                 {Array.from(container.childNodes).map((node, nodeIndex) => {
                   if (node.nodeType === Node.TEXT_NODE) {
-                    return <span key={nodeIndex}>{node.textContent}</span>;
+                    return <span key={nodeIndex}>{node.textContent}</span>
                   }
 
                   if (
                     node instanceof HTMLElement &&
-                    node.classList.contains("question-type")
+                    node.classList.contains('question-type')
                   ) {
-                    const full = node.getAttribute("data-full");
+                    const full = node.getAttribute('data-full')
                     return (
                       <Tooltip
                         key={nodeIndex}
@@ -105,69 +105,69 @@ const TestimonialContent = ({ content }: { content: string }) => {
                       >
                         <span className="font-bold">{node.textContent}</span>
                       </Tooltip>
-                    );
+                    )
                   }
 
-                  return null;
+                  return null
                 })}
               </div>
-            );
+            )
           })}
         </motion.div>
       </motion.div>
-    );
-  };
+    )
+  }
 
-  return renderContent();
-};
+  return renderContent()
+}
 
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
 }: {
-  testimonials: Testimonial[];
-  autoplay?: boolean;
+  testimonials: Testimonial[]
+  autoplay?: boolean
 }) => {
-  const { i18n } = useTranslation();
-  const [active, setActive] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const { i18n } = useTranslation()
+  const [active, setActive] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
+    setActive((prev) => (prev + 1) % testimonials.length)
+  }
 
   const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
 
   const isActive = (index: number) => {
-    return index === active;
-  };
+    return index === active
+  }
 
   useEffect(() => {
     if (autoplay && !isPaused) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
+      const interval = setInterval(handleNext, 5000)
+      return () => clearInterval(interval)
     }
-  }, [autoplay, isPaused]);
+  }, [autoplay, isPaused])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        handlePrev();
-      } else if (event.key === "ArrowRight") {
-        handleNext();
+      if (event.key === 'ArrowLeft') {
+        handlePrev()
+      } else if (event.key === 'ArrowRight') {
+        handleNext()
       }
-    };
+    }
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   const getRotation = (index: number) => {
-    const rotations = [-4, 0, 4, -8, 8, -10, 10];
-    return rotations[index % rotations.length];
-  };
+    const rotations = [-4, 0, 4, -8, 8, -10, 10]
+    return rotations[index % rotations.length]
+  }
 
   return (
     <div className="mt-6 flex w-full justify-center md:mt-8 lg:mt-4">
@@ -194,7 +194,7 @@ export const AnimatedTestimonials = ({
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : getRotation(index),
                     zIndex: isActive(index)
-                      ? 999
+                      ? 10
                       : testimonials.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
@@ -206,7 +206,7 @@ export const AnimatedTestimonials = ({
                   }}
                   transition={{
                     duration: 0.4,
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                   }}
                   className="absolute inset-0 flex origin-bottom items-center justify-center rounded-xl border border-slate-200 bg-white shadow-md dark:border-neutral-500"
                 >
@@ -242,20 +242,20 @@ export const AnimatedTestimonials = ({
             }}
             transition={{
               duration: 0.2,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           >
             <h3 className="text-lg font-bold text-black dark:text-white">
               <span className="mr-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
                 Sample {testimonials[active].id}
               </span>
-              {i18n.language === "zh"
+              {i18n.language === 'zh'
                 ? testimonials[active].nameZh
                 : testimonials[active].name}
             </h3>
             <TestimonialContent
               content={
-                i18n.language === "zh"
+                i18n.language === 'zh'
                   ? testimonials[active].contentZh
                   : testimonials[active].content
               }
@@ -278,5 +278,5 @@ export const AnimatedTestimonials = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
