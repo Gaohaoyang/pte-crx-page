@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
+import { execSync } from 'child_process'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const donationDataPath = join(
@@ -9,6 +10,19 @@ const donationDataPath = join(
 )
 
 try {
+  // Check if file has been modified using git
+  try {
+    execSync(`git diff --quiet HEAD -- "${donationDataPath}"`)
+    // If we reach here, there are no changes
+    console.log(
+      'No changes detected in donation-data.ts, skipping date update.',
+    )
+    process.exit(0)
+  } catch {
+    // git diff exits with code 1 if there are changes
+    console.log('Changes detected in donation-data.ts, updating date...')
+  }
+
   // Read the current file content
   let content = readFileSync(donationDataPath, 'utf8')
 
