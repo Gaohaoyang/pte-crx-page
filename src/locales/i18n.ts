@@ -19,7 +19,7 @@ export const getPreferredLanguage = () => {
 
     // Check localStorage first
     const savedLanguage = localStorage.getItem(LANGUAGE_KEY)
-    if (savedLanguage === 'en' || savedLanguage === 'zh') {
+    if (savedLanguage) {
       return savedLanguage
     }
 
