@@ -37,12 +37,12 @@ const Header = () => {
 
   return (
     <Navbar
+      isBordered
       maxWidth="2xl"
-      classNames={
-        {
-          // wrapper: 'container xl:max-w-[1280px] 2xl:max-w-[1300px]',
-        }
-      }
+      classNames={{
+        wrapper: 'bg-slate-100/20 dark:bg-slate-900/20',
+        // wrapper: 'container xl:max-w-[1280px] 2xl:max-w-[1300px]',
+      }}
     >
       <NavbarContent className="" justify="start">
         <NavbarBrand>
@@ -84,7 +84,8 @@ const Header = () => {
               selectionMode="single"
             >
               <DropdownItem key="en">English</DropdownItem>
-              <DropdownItem key="zh">中文</DropdownItem>
+              <DropdownItem key="zh">简体中文</DropdownItem>
+              <DropdownItem key="ja">日本語</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
@@ -143,7 +144,16 @@ const Header = () => {
                   onPress={() => handleLanguageChange('zh')}
                   className="justify-start"
                 >
-                  中文
+                  简体中文
+                </Button>
+              </li>
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => handleLanguageChange('ja')}
+                  className="justify-start"
+                >
+                  日本語
                 </Button>
               </li>
             </ul>

@@ -12,7 +12,7 @@ import { Suspense } from 'react'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-300">
       <div className="container p-4">
         {/* intro and install */}
         <div className="mt-6 flex flex-wrap gap-4">
