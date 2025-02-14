@@ -75,7 +75,7 @@ export const resources = {
   },
 } as const
 
-const initI18n = (language: 'en' | 'zh' | 'ja') => {
+const initI18n = (language: string) => {
   i18n
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
