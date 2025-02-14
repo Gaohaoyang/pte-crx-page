@@ -267,8 +267,8 @@ export const AnimatedTestimonials = ({
               ease: 'easeInOut',
             }}
           >
-            <h3 className="text-lg font-bold text-black dark:text-white">
-              <span className="mr-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
+            <h3 className="text-lg font-bold">
+              <span className="mr-2 text-xs font-extralight">
                 Sample {testimonials[active].id}
               </span>
               {getLanguage().name}
