@@ -14,6 +14,8 @@ type Testimonial = {
   contentZh: string
   name: string
   nameZh: string
+  nameJa: string
+  contentJa: string
   src: string | StaticImageData
 }
 
@@ -132,6 +134,26 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
+  const getLanguage = () => {
+    switch (i18n.language) {
+      case 'zh':
+        return {
+          name: testimonials[active].nameZh,
+          content: testimonials[active].contentZh,
+        }
+      case 'ja':
+        return {
+          name: testimonials[active].nameJa,
+          content: testimonials[active].contentJa,
+        }
+      default:
+        return {
+          name: testimonials[active].name,
+          content: testimonials[active].content,
+        }
+    }
+  }
+
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length)
   }
@@ -249,17 +271,9 @@ export const AnimatedTestimonials = ({
               <span className="mr-2 text-xs font-extralight text-gray-600 dark:text-neutral-300">
                 Sample {testimonials[active].id}
               </span>
-              {i18n.language === 'zh'
-                ? testimonials[active].nameZh
-                : testimonials[active].name}
+              {getLanguage().name}
             </h3>
-            <TestimonialContent
-              content={
-                i18n.language === 'zh'
-                  ? testimonials[active].contentZh
-                  : testimonials[active].content
-              }
-            />
+            <TestimonialContent content={getLanguage().content} />
           </motion.div>
           <div className="mb-4 flex gap-4">
             <button

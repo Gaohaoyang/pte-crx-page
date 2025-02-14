@@ -2,6 +2,7 @@ import { initReactI18next } from 'react-i18next'
 import i18n from 'i18next'
 import homeEn from '@/locales/en/home.json'
 import homeZh from '@/locales/zh/home.json'
+import homeJa from '@/locales/ja/home.json'
 
 const LANGUAGE_KEY = 'language'
 
@@ -36,6 +37,8 @@ export const getPreferredLanguage = () => {
         return 'en'
       } else if (lang.includes('zh')) {
         return 'zh'
+      } else if (lang.includes('ja')) {
+        return 'ja'
       }
     }
     return 'en'
@@ -66,6 +69,9 @@ export const resources = {
   },
   zh: {
     home: homeZh,
+  },
+  ja: {
+    home: homeJa,
   },
 } as const
 

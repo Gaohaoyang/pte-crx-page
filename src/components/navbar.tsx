@@ -84,7 +84,8 @@ const Header = () => {
               selectionMode="single"
             >
               <DropdownItem key="en">English</DropdownItem>
-              <DropdownItem key="zh">中文</DropdownItem>
+              <DropdownItem key="zh">简体中文</DropdownItem>
+              <DropdownItem key="ja">日本語</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
@@ -143,7 +144,16 @@ const Header = () => {
                   onPress={() => handleLanguageChange('zh')}
                   className="justify-start"
                 >
-                  中文
+                  简体中文
+                </Button>
+              </li>
+              <li>
+                <Button
+                  variant="light"
+                  onPress={() => handleLanguageChange('ja')}
+                  className="justify-start"
+                >
+                  日本語
                 </Button>
               </li>
             </ul>
