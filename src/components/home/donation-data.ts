@@ -1,5 +1,5 @@
 // This constant will be updated when the file is modified automatically
-export const LAST_UPDATED = '2025-03-03'
+export const LAST_UPDATED = '2025-03-12'
 
 const donationData = [
   {
