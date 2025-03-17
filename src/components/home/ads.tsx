@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import Link from 'next/link'
 import { motion, useInView } from 'motion/react'
+import { addToast } from '@heroui/react'
 
 const Ads = () => {
   const ref = useRef(null)
@@ -23,7 +24,18 @@ const Ads = () => {
             广告 Ad
           </span>
         </div>
-        <div className="mb-4 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20">
+        <div
+          className="mb-4 cursor-pointer rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20"
+          onClick={() => {
+            // 复制
+            navigator.clipboard.writeText('NR005')
+            addToast({
+              title: '优惠码 NR005 已复制到剪贴板',
+              description: '请在PTE考试官网使用',
+              color: 'success',
+            })
+          }}
+        >
           <p className="text-sm text-slate-600 dark:text-slate-300">
             PTE 8.8折优惠码：
             <code className="ml-2 font-bold text-blue-600 dark:text-blue-400">
@@ -47,7 +59,7 @@ const Ads = () => {
       >
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            科学上网服务
+            科学上网服务，无缝体验真实的互联网
           </h3>
           <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-600 dark:bg-blue-900 dark:text-blue-300">
             广告 Ad
@@ -55,13 +67,13 @@ const Ads = () => {
         </div>
         <div className="mb-4 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20">
           <p className="text-sm text-slate-600 dark:text-slate-300">
-            稳定可靠的代理服务，物美价廉的梯子 <br />
             <Link
               href="https://portal.shadowsocks.au/aff.php?aff=22354"
               target="_blank"
               rel="noopener noreferrer"
               // className="inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
             >
+              稳定可靠的代理服务，物美价廉的梯子 <br />
               https://portal.shadowsocks.au/aff.php?aff=22354
             </Link>
           </p>
