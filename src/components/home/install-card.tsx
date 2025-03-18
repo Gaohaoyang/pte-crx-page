@@ -6,6 +6,8 @@ import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
 import { motion, useInView } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import { useRef } from 'react'
+import chromePng from '@/assets/home/chrome.png'
+import edgePng from '@/assets/home/edge.png'
 
 const InstallCard = () => {
   const { t } = useTranslation('home')
@@ -68,11 +70,11 @@ const InstallCard = () => {
           <CardItem
             translateZ={80}
             translateX={5}
-            className="flex w-full justify-center"
+            className="mb-1 mt-3 flex w-full flex-col items-center justify-center gap-2"
           >
             <Button
               color="primary"
-              className="mt-4 w-11/12 rounded-full font-semibold shadow-lg"
+              className="w-11/12 rounded-full font-semibold shadow-lg"
               onPress={() => {
                 window.open(
                   'https://chromewebstore.google.com/detail/pte-sub-scores-breakdown/hibclclepijigjnfdkmkfhjogfhgicda',
@@ -80,7 +82,21 @@ const InstallCard = () => {
                 )
               }}
             >
+              <Image src={chromePng} alt="chrome" width={20} height={20} />
               {t('Install from Chrome Web Store')}
+            </Button>
+            <Button
+              color="primary"
+              className="w-11/12 rounded-full font-semibold shadow-lg"
+              onPress={() => {
+                window.open(
+                  'https://microsoftedge.microsoft.com/addons/detail/pte-subscores-breakdown/ldncinbpnblagkpngpnloaekkfekoejk',
+                  '_blank'
+                )
+              }}
+            >
+              <Image src={edgePng} alt="edge" width={20} height={20} />
+              {t('Install from Edge Addons')}
             </Button>
           </CardItem>
         </CardBody>

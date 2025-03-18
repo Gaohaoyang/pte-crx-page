@@ -7,6 +7,7 @@
   "Chrome Extension": "Chrome Extension",
   "PTE Sub-Scores Breakdown": "PTE Sub-Scores Breakdown",
   "Install from Chrome Web Store": "Install from Chrome Web Store",
+  "Install from Edge Addons": "Install from Edge Addons",
   "Samples": "Samples",
   "How It Works": "How It Works",
   "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel. This intercept is only executed on the client side, and will not be uploaded to any server.",

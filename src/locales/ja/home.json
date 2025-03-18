@@ -7,6 +7,7 @@
   "Chrome Extension": "Chrome 拡張機能",
   "PTE Sub-Scores Breakdown": "PTE Sub-Scores Breakdown",
   "Install from Chrome Web Store": "Chrome ウェブストアからインストール",
+  "Install from Edge Addons": "Edge アドオンからインストール",
   "Samples": "サンプル",
   "How It Works": "仕組み",
   "When you visit the PTE score page, the Chrome extension intercepts the API response, adds some question types, and renders them in the page panel.": "PTE スコアページにアクセスすると、Chrome拡張機能がAPIレスポンスを取得し、問題タイプを追加してページパネルに表示します。この処理はクライアント側でのみ実行され、サーバーにはアップロードされません。",
