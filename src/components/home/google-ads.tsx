@@ -5,12 +5,12 @@ import React from 'react'
 const GoogleAds = () => {
   return (
     <div
-      className="mt-10"
+      className="mt-32"
       dangerouslySetInnerHTML={{
         __html: `
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
      crossorigin="anonymous"></script>
-<!-- unit -->
+<!-- pte-crx-page-row -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9139027259917346"
