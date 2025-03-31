@@ -1,7 +1,13 @@
 // This constant will be updated when the file is modified automatically
-export const LAST_UPDATED = '2025-03-24'
+export const LAST_UPDATED = '2025-03-31'
 
 const donationData = [
+  {
+    name: '*4',
+    date: '2025-03-31',
+    amount: '￥20.00',
+    method: 'Wechat Pay',
+  },
   {
     name: '看*了',
     date: '2025-03-21',
