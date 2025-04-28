@@ -29,22 +29,47 @@ const TestimonialContent = ({ content }: { content: string }) => {
   }, [])
 
   const processContent = (text: string) => {
-    const words = text.split(/\s+/)
-    return words
-      .map((word) => {
-        const cleanWord = word.replace(/[.,!?()]/g, '').trim()
-        if (
-          cleanWord in questionTypes &&
-          typeof questionTypes[cleanWord as keyof typeof questionTypes] ===
-            'string'
-        ) {
-          return `<span class="question-type" data-type="${cleanWord}" data-full="${
-            questionTypes[cleanWord as keyof typeof questionTypes]
-          }">${word}</span>`
-        }
-        return word
-      })
-      .join(' ')
+    // Create a temporary placeholder map to avoid nested replacements
+    const placeholders = new Map()
+    let processedText = text
+    let placeholderIndex = 0
+
+    // Sort keys by length in descending order to handle longer matches first
+    // This avoids partial matches within longer keys
+    const typeKeys = Object.keys(questionTypes).sort(
+      (a, b) => b.length - a.length
+    )
+
+    for (const key of typeKeys) {
+      if (
+        typeof questionTypes[key as keyof typeof questionTypes] === 'string'
+      ) {
+        // Use a simple string replacement without regex word boundaries for i18n support
+        const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        const regex = new RegExp(escapedKey, 'g')
+
+        // Create a unique placeholder that won't be in the original text
+        const placeholder = `__PLACEHOLDER_${placeholderIndex++}__`
+
+        // First replace with placeholder
+        processedText = processedText.replace(regex, placeholder)
+
+        // Store the HTML we want to eventually insert
+        placeholders.set(
+          placeholder,
+          `<span class="question-type" data-type="${key}" data-full="${
+            questionTypes[key as keyof typeof questionTypes]
+          }">${key}</span>`
+        )
+      }
+    }
+
+    // Replace all placeholders with their HTML in a second pass
+    placeholders.forEach((value, placeholder) => {
+      processedText = processedText.replace(new RegExp(placeholder, 'g'), value)
+    })
+
+    return processedText
   }
 
   const renderContent = () => {
