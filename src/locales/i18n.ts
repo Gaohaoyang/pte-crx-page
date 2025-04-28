@@ -3,7 +3,7 @@ import i18n from 'i18next'
 import homeEn from '@/locales/en/home.json'
 import homeZh from '@/locales/zh/home.json'
 import homeJa from '@/locales/ja/home.json'
-
+import homeKo from '@/locales/ko/home.json'
 const LANGUAGE_KEY = 'language'
 
 const isBrowser = typeof window !== 'undefined'
@@ -39,6 +39,8 @@ export const getPreferredLanguage = () => {
         return 'zh'
       } else if (lang.includes('ja')) {
         return 'ja'
+      } else if (lang.includes('ko')) {
+        return 'ko'
       }
     }
     return 'en'
@@ -72,6 +74,9 @@ export const resources = {
   },
   ja: {
     home: homeJa,
+  },
+  ko: {
+    home: homeKo,
   },
 } as const
 

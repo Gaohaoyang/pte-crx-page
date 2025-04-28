@@ -16,6 +16,8 @@ type Testimonial = {
   nameZh: string
   nameJa: string
   contentJa: string
+  nameKo: string
+  contentKo: string
   src: string | StaticImageData
 }
 
@@ -145,6 +147,11 @@ export const AnimatedTestimonials = ({
         return {
           name: testimonials[active].nameJa,
           content: testimonials[active].contentJa,
+        }
+      case 'ko':
+        return {
+          name: testimonials[active].nameKo,
+          content: testimonials[active].contentKo,
         }
       default:
         return {
