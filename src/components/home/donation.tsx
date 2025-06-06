@@ -24,7 +24,8 @@ import { prefix } from '@/lib/utils'
 const Donation = () => {
   const { t } = useTranslation('home')
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
+
   const searchParams = useSearchParams()
   const router = useRouter()
 
@@ -56,6 +57,7 @@ const Donation = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="will-change-transform"
       >
         <h2 className="mb-6 text-3xl font-bold">{t('Donation')}</h2>
       </motion.div>
@@ -64,6 +66,7 @@ const Donation = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
         transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+        className="will-change-transform"
       >
         <p>
           {t(
