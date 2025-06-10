@@ -3,6 +3,12 @@ export const LAST_UPDATED = '2025-06-06'
 
 const donationData = [
   {
+    name: '*心',
+    date: '2025-06-09',
+    amount: '￥8.00',
+    method: 'Wechat Pay',
+  },
+  {
     name: '**男',
     date: '2025-06-05',
     amount: '￥1.00',
