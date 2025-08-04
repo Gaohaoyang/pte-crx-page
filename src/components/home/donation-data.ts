@@ -1,7 +1,40 @@
 // This constant will be updated when the file is modified automatically
-export const LAST_UPDATED = '2025-07-20'
+export const LAST_UPDATED = '2025-08-04'
 
 const donationData = [
+  {
+    name: 'B*~',
+    date: '2025-08-04',
+    amount: '￥9.90',
+    method: 'Wechat Pay',
+    message:
+      '来杯瑞幸生椰拿铁！可能有bug：edge刷新后插件好像不生效了，那个加号不见了，重启浏览器，重装插件都不行。（作者回复：已经修复了，Edge 平台正在审核中）',
+  },
+  {
+    name: '*箭',
+    date: '2025-08-01',
+    amount: '￥1.00',
+    method: 'Wechat Pay',
+  },
+  {
+    name: 'i*G',
+    date: '2025-07-31',
+    amount: '￥1.00',
+    method: 'Wechat Pay',
+  },
+  {
+    name: '*I',
+    date: '2025-07-31',
+    amount: '￥10.00',
+    method: 'Wechat Pay',
+  },
+  {
+    name: '**怡',
+    date: '2025-07-25',
+    amount: '￥8.00',
+    method: 'AliPay',
+    message: '八炸了，谢谢你的插件🙏',
+  },
   {
     name: '**嫣',
     date: '2025-07-20',

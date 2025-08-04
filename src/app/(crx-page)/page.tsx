@@ -10,7 +10,7 @@ import Comments from '@/components/home/comments'
 import Samples from '@/components/home/samples'
 import { Suspense } from 'react'
 import Ads from '@/components/home/ads'
-import GoogleAds from '@/components/home/google-ads'
+// import GoogleAds from '@/components/home/google-ads'
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <Suspense>
           <Donation />
         </Suspense>
-        <GoogleAds />
+        {/* <GoogleAds /> */}
         <Comments />
       </div>
     </div>
