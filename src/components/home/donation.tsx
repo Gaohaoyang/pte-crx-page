@@ -78,44 +78,12 @@ const Donation = () => {
             'Have a great day! Your name will appear on the donation list. ❤️'
           )}
         </p>
-        <p className="mb-2 mr-2 mt-2 text-right text-sm text-gray-500 dark:text-gray-300">
-          {t('Last updated:')} {LAST_UPDATED}
-        </p>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
-      >
-        <Table isStriped aria-label="Donation table" className="w-full">
-          <TableHeader>
-            <TableColumn>{t('Name')}</TableColumn>
-            <TableColumn>{t('Date')}</TableColumn>
-            <TableColumn>{t('Amount')}</TableColumn>
-            <TableColumn>{t('Method')}</TableColumn>
-            <TableColumn>{t('Message')}</TableColumn>
-          </TableHeader>
-          <TableBody>
-            {donationData.map((donation, index) => (
-              <TableRow key={index}>
-                <TableCell>{donation.name}</TableCell>
-                <TableCell>{donation.date}</TableCell>
-                <TableCell>{donation.amount}</TableCell>
-                <TableCell>
-                  <div dangerouslySetInnerHTML={{ __html: donation.method }} />
-                </TableCell>
-                <TableCell>{donation.message || '-'}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-        transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
       >
         <p className="mt-4">
           {t('You can support me through the following methods.')}
@@ -175,6 +143,38 @@ const Donation = () => {
             </motion.div>
           ))}
         </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+        transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+      >
+        <p className="mb-2 mr-2 mt-2 text-right text-sm text-gray-500 dark:text-gray-300">
+          {t('Last updated:')} {LAST_UPDATED}
+        </p>
+        <Table isStriped aria-label="Donation table" className="w-full">
+          <TableHeader>
+            <TableColumn>{t('Name')}</TableColumn>
+            <TableColumn>{t('Date')}</TableColumn>
+            <TableColumn>{t('Amount')}</TableColumn>
+            <TableColumn>{t('Method')}</TableColumn>
+            <TableColumn>{t('Message')}</TableColumn>
+          </TableHeader>
+          <TableBody>
+            {donationData.map((donation, index) => (
+              <TableRow key={index}>
+                <TableCell>{donation.name}</TableCell>
+                <TableCell>{donation.date}</TableCell>
+                <TableCell>{donation.amount}</TableCell>
+                <TableCell>
+                  <div dangerouslySetInnerHTML={{ __html: donation.method }} />
+                </TableCell>
+                <TableCell>{donation.message || '-'}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </motion.div>
     </div>
   )
